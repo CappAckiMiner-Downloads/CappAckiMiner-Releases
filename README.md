@@ -7,13 +7,13 @@ Official download area for CappAckiMiner PRO for Windows and Android.
 | Platform | Application | Availability |
 | --- | --- | --- |
 | Windows x64 | CappAckiMiner PRO | Installer will be published in Releases. |
-| Android | CappAckiMiner Android PRO | APK files will be published in Releases. |
+| Android | CappAckiMiner Android PRO | [Universal 1.3.5 / ARM64 1.3.4 - Download](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/android-pro-2026-09-17) |
 
 [Open PRO releases / PRO sürümlerini aç](https://github.com/cappackiminer/CappAckiMiner-PRO/releases)
 
-This new area does not contain any installers yet. Only explicitly selected, verified release files will be added.
+Android PRO downloads are now available. The Universal APK is version 1.3.5 and includes ARM64 and ARMv7 support; the ARM64-only APK is version 1.3.4. Windows PRO installers have not been published here yet.
 
-Bu yeni alana henüz kurulum dosyası yüklenmedi. Windows PRO ve Android PRO dosyaları, seçilip doğrulandıktan sonra Releases bölümünde yayımlanacaktır.
+Android PRO dosyaları yayımlandı. Universal paket 1.3.5 sürümüdür ve ARM64 ile ARMv7 desteği içerir; yalnız ARM64 paket 1.3.4 sürümüdür. Windows PRO kurulumları bu alana henüz yüklenmedi.
 
 ## Source code / Kaynak kodu
 
