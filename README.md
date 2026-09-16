@@ -17,11 +17,11 @@ Bu yeni alana henüz kurulum dosyası yüklenmedi. Windows PRO ve Android PRO do
 
 ## Source code / Kaynak kodu
 
-This is a public **binary distribution repository**, not the application source repository. Application source code is maintained separately in a private repository. Do not upload application source, wallet backups, recovery phrases, private keys, mining credentials, logs, or user data here.
+This is a public **binary distribution repository**, not the application source repository. Application source code is not published in this repository. Do not upload application source, wallet backups, recovery phrases, private keys, mining credentials, logs, or user data here.
 
 Bu depo yalnızca herkese açık kurulum dosyalarının dağıtımı içindir. Uygulamanın kaynak kodu ayrı ve gizli tutulur. Cüzdan yedekleri, kurtarma kelimeleri, özel anahtarlar, mining yetkilendirme bilgileri, loglar ve kullanıcı verileri bu depoya yüklenmez.
 
-GitHub may show automatic “Source code” ZIP/TAR downloads on a release. These archive only the public contents of this distribution repository, not the separate private application source.
+GitHub may show automatic “Source code” ZIP/TAR downloads on a release. These archive only the public contents of this distribution repository, not the application source code.
 
 ## Existing downloads / Önceki indirmeler
 
