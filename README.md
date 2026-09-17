@@ -1,48 +1,67 @@
 # CappAckiMiner PRO
 
-Official downloads for **CappAckiMiner PRO for Windows and Android**.
+Official binary downloads for **CappAckiMiner PRO on Windows and Android**.
+
+> Application source code and private mining implementation details are not published in this distribution repository.
 
 ## Downloads
 
-| Platform | Edition | Download |
-| --- | --- | --- |
-| Windows | PRO - TEST4.3 PRO build | [Download PRO](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO.exe) |
-| Windows | PRO B - TEST.15 build | [Download PRO B](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO_B.exe) |
-| Android | Universal 1.3.5 - ARM64 and ARMv7 | [Download Universal APK](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-1.3.5-Universal.apk) |
-| Android | ARM64 1.3.4 - ARM64 only | [Download ARM64 APK](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-ARM64.apk) |
+| Platform | Edition | Version | Download |
+| --- | --- | --- | --- |
+| Windows | PRO | `1.3.20-test.4.3pro.9` | [Download CappAckiMiner-PRO.exe](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO.exe) |
+| Windows | PRO B | `1.3.20-test.20` | [Download CappAckiMiner-PRO_B.exe](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO_B.exe) |
+| Android | Universal 1.3.5 | ARM64 and ARMv7 | [Download Universal APK](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-1.3.5-Universal.apk) |
+| Android | ARM64 1.3.4 | ARM64 only | [Download ARM64 APK](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-ARM64.apk) |
 
-[Windows PRO release notes](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/windows-pro-ab-2026-09-17) · [Android PRO release notes](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/android-pro-2026-09-17) · [All releases](https://github.com/cappackiminer/CappAckiMiner-PRO/releases)
+[Windows release notes](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/windows-pro-ab-2026-09-17) · [Android release notes](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/android-pro-2026-09-17) · [All releases](https://github.com/cappackiminer/CappAckiMiner-PRO/releases) · [Türkçe yardım](HELP.md)
 
 ## Windows editions
 
-**PRO** is our TEST4.3 PRO-based Single Engine build. Its internal version is `1.3.15-test.4.3pro.4`.
+**PRO** is the TEST4.3 PRO-derived Single Engine line. **PRO B** is the newer Single Engine comparison line. Both builds include the current verified-epoch handoff and late-result isolation work.
 
-**PRO B** is our TEST.15 Single Engine build. Its internal version is `1.3.14-test.15`.
+The two editions now use separate application identities, executable names, installation directories and local data areas, so they can be installed and opened independently. A compatible legacy profile may be copied once on first run and then each edition keeps its own data.
 
-The lightning effect has been removed from both Windows builds. The PRO seal and donation heart remain available, and completed-session statuses retain the 145-second status-priority fix.
+Do **not** start mining the same wallet in both editions at the same time. Side-by-side installation is intended for controlled comparison, not duplicate operation of one wallet.
 
-These are alternative builds sharing the same installation identity; install and compare one at a time. The internal version strings identify the builds. Windows installers do not currently carry an Authenticode digital signature. Keep your wallet backup safe before changing versions.
+Both Windows downloads are installer packages published under stable filenames so existing links continue to work. They do not currently carry an Authenticode digital signature; Windows may therefore show a SmartScreen warning.
+
+## What changed in this Windows update
+
+- PRO and PRO B can be installed and launched independently.
+- A confirmed new mining epoch can retire obsolete local ownership left by an older completed session, preventing it from unnecessarily blocking the next start.
+- A real late SDK result remains attributable to the older session without taking control of the newer session.
+- Current-session and late-session accept indicators are kept separate and reset at the verified epoch boundary.
+- Existing wallet backup, daily/epoch counters, network-health display, Main/Lite views and fixed production timing remain available.
+
+This release improves lifecycle stability. It does not guarantee an acceptance rate, reward amount or uninterrupted network availability.
+
+## Windows verification
+
+```text
+BFBB03A27100243604FA84D075E8453F0B86513275EE8EF4282A6FC9B4A3A4C1  CappAckiMiner-PRO.exe
+6824257881D08B8E8ACFC49139C5E3CCCCB9A185DC05F4620524C5AF104D058C  CappAckiMiner-PRO_B.exe
+```
+
+PowerShell example:
+
+```powershell
+Get-FileHash .\CappAckiMiner-PRO.exe -Algorithm SHA256
+Get-FileHash .\CappAckiMiner-PRO_B.exe -Algorithm SHA256
+```
 
 ## Android packages
 
-The Universal APK is version **1.3.5** and supports both ARM64 and ARMv7. The ARM64-only APK is the earlier version **1.3.4**. Both use the same Android application ID. The Universal package already supports ARM64 devices.
+The Universal APK is version **1.3.5** and supports ARM64 and ARMv7. The ARM64-only APK is the earlier version **1.3.4**. Both use the same Android application ID. Minimum Android API level: **24**.
 
-Minimum Android API level: **24**. Avoid unnecessary downgrades or uninstalling an existing installation without a safe backup of your application data.
+Avoid unnecessary downgrades or uninstalling an existing installation without first creating and safely checking a wallet backup.
 
-## Source code and privacy
+## Safety and privacy
 
-This public repository distributes compiled installers and APKs. **Application source code is not published here.** Do not upload wallet backups, recovery phrases, private keys, mining credentials, logs or user data.
+- Keep wallet backups, recovery material and private keys offline and private.
+- Never publish a wallet-backup file, private key or unredacted diagnostic log in a GitHub issue or chat.
+- Verify the SHA-256 hash after downloading.
+- Mining acceptance and rewards depend on the network, wallet authorization, SDK responses and current network conditions; they cannot be guaranteed.
 
-GitHub may display automatic Source code ZIP/TAR downloads on release pages. Those archives contain only this distribution repository's documentation, not the application's source code.
+For installation, first-run, status explanations, backup guidance and troubleshooting, see the [complete Turkish help guide](HELP.md).
 
-## Verification
-
-Release notes include SHA-256 hashes for all uploaded installers and APKs. Uploaded file sizes and hashes are checked against the original files. Hash verification confirms file identity; it is not a guarantee of software safety or mining performance.
-
-## Existing downloads
-
-The previous download area remains available separately: [CappAckiMiner Releases](https://github.com/cappackiminer/CappAckiMiner-Releases/releases/tag/v1.0.0).
-
-## Network notice
-
-Mining acceptance and rewards depend on the network, wallet authorization, SDK responses and network conditions. Rewards and uninterrupted service cannot be guaranteed.
+GitHub's automatic “Source code” ZIP/TAR files contain only this distribution repository's documentation, not the application's source code.
