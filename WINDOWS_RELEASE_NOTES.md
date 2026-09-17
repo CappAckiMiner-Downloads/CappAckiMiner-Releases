@@ -4,15 +4,21 @@
 
 | Edition | Public file | Build line | Internal version |
 | --- | --- | --- | --- |
-| PRO | `CappAckiMiner-PRO.exe` | TEST4.3 PRO | `1.3.20-test.4.3pro.9` |
-| PRO B | `CappAckiMiner-PRO_B.exe` | Current B comparison line | `1.3.20-test.20` |
+| PRO | `CappAckiMiner-PRO.exe` | TEST4.3 PRO.11 — frozen | `1.3.20-test.4.3pro.11` |
+| PRO B | `CappAckiMiner-PRO_B.exe` | TEST.22 — active development | `1.3.20-test.22` |
 | Backup converter | `CappAckiMiner-Legacy-Backup-Converter-Setup.exe` | Installed utility | `1.0.0` |
 | Backup converter | `CappAckiMiner-Legacy-Backup-Converter.exe` | Portable utility | `1.0.0` |
 
 The PRO and PRO B files are Windows installer packages. The converter is available as both an installer and a portable executable. Stable public filenames are retained so existing download links continue to work.
 
+PRO is now frozen at PRO.11. Further development and testing will continue on PRO B. This publication uses the existing installer packages without rebuilding or modifying them.
+
 ## Changes in this update
 
+- Main Mode distributes the monitor and income panels across the available toolbar space.
+- Main wallet cards give reward amounts more room and use smaller timestamps for the three recent rewards.
+- Blue and green accept indicators use a more visible 12% wallet-card background tint while retaining their existing epoch reset behavior.
+- Manual-stop status is clearer, daily-epoch monitor reporting is more consistent, and dense wallet views reduce decorative animation.
 - PRO and PRO B now use separate application identities, executable names, installation directories and local data areas. They can be installed and launched independently.
 - A compatible legacy profile can be migrated once on first run; the editions then maintain independent local data.
 - Verified epoch handoff no longer allows an inactive older session owner to unnecessarily block the next epoch start.
@@ -41,8 +47,8 @@ The legacy EXE is never executed. The utility opens it only as a data file, vali
 ## SHA-256
 
 ```text
-BFBB03A27100243604FA84D075E8453F0B86513275EE8EF4282A6FC9B4A3A4C1  CappAckiMiner-PRO.exe
-6824257881D08B8E8ACFC49139C5E3CCCCB9A185DC05F4620524C5AF104D058C  CappAckiMiner-PRO_B.exe
+DE47B23A2AE2C4E3BA1748103BB57AF54A4948C239345D5CC85752EEDA8AB663  CappAckiMiner-PRO.exe
+0B600EA70829B9BC31DF8F16F749FC754260E821971E437412EE282167A8E1B2  CappAckiMiner-PRO_B.exe
 5217A1BBD53A47D74904FF5EE2C6D888522DCC5145979B88446C75BF342B3FC9  CappAckiMiner-Legacy-Backup-Converter-Setup.exe
 656C8B07796288CA53FE270C55D146C1D06AED1444C68CD86CB8804E5ECD40BF  CappAckiMiner-Legacy-Backup-Converter.exe
 ```

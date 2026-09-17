@@ -23,8 +23,10 @@ This guide covers safe installation, basic operation, on-screen statuses and tro
 
 | Edition | Purpose | Internal version |
 | --- | --- | --- |
-| **PRO** | Conservative comparison line derived from TEST4.3 PRO | `1.3.20-test.4.3pro.9` |
-| **PRO B** | Alternative comparison line with the newer lifecycle fixes | `1.3.20-test.20` |
+| **PRO** | TEST4.3 PRO-derived edition, frozen at PRO.11 | `1.3.20-test.4.3pro.11` |
+| **PRO B** | Single Engine edition for continued development and testing | `1.3.20-test.22` |
+
+PRO will remain unchanged at this release. Further development and testing will continue on PRO B.
 
 Both editions use the Single Engine architecture. They have separate application identities, installation directories, executable names and local data areas, so they can be installed and opened independently on the same computer.
 
