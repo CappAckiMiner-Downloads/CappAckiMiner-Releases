@@ -6,8 +6,8 @@ Official downloads for **CappAckiMiner PRO for Windows and Android**.
 
 | Platform | Edition | Download |
 | --- | --- | --- |
-| Windows | PRO A - TEST4.3 PRO build | [Download PRO A](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO_A.exe) |
-| Windows | PRO B - TEST.13 build | [Download PRO B](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO_B.exe) |
+| Windows | PRO - TEST4.3 PRO build | [Download PRO](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO.exe) |
+| Windows | PRO B - TEST.15 build | [Download PRO B](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO_B.exe) |
 | Android | Universal 1.3.5 - ARM64 and ARMv7 | [Download Universal APK](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-1.3.5-Universal.apk) |
 | Android | ARM64 1.3.4 - ARM64 only | [Download ARM64 APK](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-ARM64.apk) |
 
@@ -15,11 +15,13 @@ Official downloads for **CappAckiMiner PRO for Windows and Android**.
 
 ## Windows editions
 
-**PRO A** is our TEST4.3 PRO-based Single Engine build. Its internal version is `1.3.15-test.4.3pro.2`.
+**PRO** is our TEST4.3 PRO-based Single Engine build. Its internal version is `1.3.15-test.4.3pro.4`.
 
-**PRO B** is our TEST.13 Single Engine build. Its internal version is `1.3.14-test.13`.
+**PRO B** is our TEST.15 Single Engine build. Its internal version is `1.3.14-test.15`.
 
-The internal version strings identify the builds. Windows installers do not currently carry an Authenticode digital signature. Keep your wallet backup safe before changing versions.
+The lightning effect has been removed from both Windows builds. The PRO seal and donation heart remain available, and completed-session statuses retain the 145-second status-priority fix.
+
+These are alternative builds sharing the same installation identity; install and compare one at a time. The internal version strings identify the builds. Windows installers do not currently carry an Authenticode digital signature. Keep your wallet backup safe before changing versions.
 
 ## Android packages
 
