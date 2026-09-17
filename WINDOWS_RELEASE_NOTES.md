@@ -4,31 +4,36 @@
 
 | Edition | Public file | Build line | Internal version |
 | --- | --- | --- | --- |
-| PRO | `CappAckiMiner-PRO.exe` | TEST4.3 PRO.11 — frozen | `1.3.20-test.4.3pro.11` |
-| PRO B | `CappAckiMiner-PRO_B.exe` | TEST.22 — active development | `1.3.20-test.22` |
+| PRO | `CappAckiMiner-PRO.exe` | TEST4.3 PRO.12 — visual update, frozen mining line | `1.3.20-test.4.3pro.12` |
+| PRO B | `CappAckiMiner-PRO_B.exe` | TEST.23 — active development | `1.3.20-test.23` |
 | Backup converter | `CappAckiMiner-Legacy-Backup-Converter-Setup.exe` | Installed utility | `1.0.0` |
 | Backup converter | `CappAckiMiner-Legacy-Backup-Converter.exe` | Portable utility | `1.0.0` |
 
 The PRO and PRO B files are Windows installer packages. The converter is available as both an installer and a portable executable. Stable public filenames are retained so existing download links continue to work.
 
-PRO is now frozen at PRO.11. Further development and testing will continue on PRO B. This publication uses the existing installer packages without rebuilding or modifying them.
+PRO.12 is an explicitly requested visual-only update to the frozen PRO.11 mining line. This release rebuilds both installers with the shared interface improvements below, without changing either edition's mining behavior. Continued development and mining tests remain on PRO B.
 
 ## Changes in this update
 
-- Main Mode distributes the monitor and income panels across the available toolbar space.
-- Main wallet cards give reward amounts more room and use smaller timestamps for the three recent rewards.
-- Blue and green accept indicators use a more visible 12% wallet-card background tint while retaining their existing epoch reset behavior.
-- Manual-stop status is clearer, daily-epoch monitor reporting is more consistent, and dense wallet views reduce decorative animation.
-- PRO and PRO B now use separate application identities, executable names, installation directories and local data areas. They can be installed and launched independently.
+- Main Mode shares Lite's top two rows instead of using a separate toolbar layout.
+- Add Wallet stays visible beside the mining controls at desktop widths from 1280 to 1920 pixels; the compact log control also remains available.
+- The three recent-reward timestamps in Main cards are enlarged to a readable 8–9 px. Full reward amounts retain priority, including in narrow cards.
+- Mining behavior, counters, reward accounting, start controls and timing are unchanged by these presentation changes.
+
+## Existing features retained
+
+- Blue and green accept indicators use a 12% wallet-card background tint with their existing epoch reset behavior.
+- Manual-stop status, daily-epoch monitor reporting and reduced decorative animation in dense wallet views remain available.
+- PRO and PRO B retain separate application identities, executable names, installation directories and local data areas. They can be installed and launched independently.
 - A compatible legacy profile can be migrated once on first run; the editions then maintain independent local data.
-- Verified epoch handoff no longer allows an inactive older session owner to unnecessarily block the next epoch start.
+- Existing verified-epoch handoff prevents inactive older-session ownership from unnecessarily blocking the next epoch start.
 - A real late SDK result stays associated with its older session and cannot take control of a newer mining session.
 - Current-session and late-session accept indicators stay isolated and reset on the verified epoch boundary.
 - Existing wallet backup, Main/Lite views, network health, daily/epoch accounting and fixed production timing remain available.
 
 > Do not mine the same wallet in PRO and PRO B at the same time. Side-by-side installation is intended for controlled comparison, not duplicate wallet operation.
 
-This update improves lifecycle stability; it does not guarantee an acceptance rate, reward amount or uninterrupted network availability.
+This is a visual update, not a new mining optimization. It makes no claim of improved acceptance or rewards and does not guarantee an acceptance rate, reward amount or uninterrupted network availability.
 
 ## Legacy backup converter
 
@@ -47,8 +52,8 @@ The legacy EXE is never executed. The utility opens it only as a data file, vali
 ## SHA-256
 
 ```text
-DE47B23A2AE2C4E3BA1748103BB57AF54A4948C239345D5CC85752EEDA8AB663  CappAckiMiner-PRO.exe
-0B600EA70829B9BC31DF8F16F749FC754260E821971E437412EE282167A8E1B2  CappAckiMiner-PRO_B.exe
+AB0194A1D5F939E7D44D814FBAE78F4DDF0B26386A553259F3BB204630184DBA  CappAckiMiner-PRO.exe
+D819B423C0E5D28A33D141F7AA32F97C5EC4695BD50E746DC7F30F45D00FDCBD  CappAckiMiner-PRO_B.exe
 5217A1BBD53A47D74904FF5EE2C6D888522DCC5145979B88446C75BF342B3FC9  CappAckiMiner-Legacy-Backup-Converter-Setup.exe
 656C8B07796288CA53FE270C55D146C1D06AED1444C68CD86CB8804E5ECD40BF  CappAckiMiner-Legacy-Backup-Converter.exe
 ```

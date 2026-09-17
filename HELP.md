@@ -23,10 +23,10 @@ This guide covers safe installation, basic operation, on-screen statuses and tro
 
 | Edition | Purpose | Internal version |
 | --- | --- | --- |
-| **PRO** | TEST4.3 PRO-derived edition, frozen at PRO.11 | `1.3.20-test.4.3pro.11` |
-| **PRO B** | Single Engine edition for continued development and testing | `1.3.20-test.22` |
+| **PRO** | TEST4.3 PRO-derived edition; PRO.12 visual update, frozen mining line | `1.3.20-test.4.3pro.12` |
+| **PRO B** | Single Engine edition for continued development and testing | `1.3.20-test.23` |
 
-PRO will remain unchanged at this release. Further development and testing will continue on PRO B.
+PRO.12 contains an explicitly requested interface update to PRO.11, without changing its mining behavior. The PRO mining line remains frozen; continued development and mining tests remain on PRO B. PRO.12 and B TEST.23 share the same visual changes described below, not a new mining strategy.
 
 Both editions use the Single Engine architecture. They have separate application identities, installation directories, executable names and local data areas, so they can be installed and opened independently on the same computer.
 
@@ -63,6 +63,8 @@ After first launch:
 - Import missing wallets from a trusted backup.
 - Confirm that a backup exists before deleting any wallet.
 - Never run the same wallet in both editions simultaneously.
+
+To add a wallet, use the **+ wallet** button beside the red Stop All button in the second top row. Main and Lite now share these two top rows, so the control stays in the same place when switching views. For an existing backup, use **Wallet Backup > Import Wallet Backup**.
 
 ## Starting and stopping mining
 
@@ -161,7 +163,9 @@ This setting is separate from mining tap timing. Production tap timing is not ad
 
 ### Main and Lite views
 
-Main provides larger cards and a more detailed layout. Lite uses a denser layout so that more wallets can be monitored on one screen. Changing the view does not change the mining engine.
+Main provides larger cards and a more detailed layout. Lite uses a denser layout so that more wallets can be monitored on one screen. Both views now share Lite's top two rows, including the Add Wallet button and the compact log button. The controls remain visible at desktop widths from 1280 to 1920 pixels. Changing the view does not change the mining engine.
+
+Main cards show the three most recent reward amounts beside their arrival times. The timestamps use a more readable 8–9 px size, while full reward amounts retain priority even in narrow cards. Lite wallet rows are unchanged by this adjustment.
 
 ### Language and animations
 
@@ -277,8 +281,8 @@ Where possible, share only a few minutes before and after the problem. Keep the 
 Current Windows installer hashes:
 
 ```text
-BFBB03A27100243604FA84D075E8453F0B86513275EE8EF4282A6FC9B4A3A4C1  CappAckiMiner-PRO.exe
-6824257881D08B8E8ACFC49139C5E3CCCCB9A185DC05F4620524C5AF104D058C  CappAckiMiner-PRO_B.exe
+AB0194A1D5F939E7D44D814FBAE78F4DDF0B26386A553259F3BB204630184DBA  CappAckiMiner-PRO.exe
+D819B423C0E5D28A33D141F7AA32F97C5EC4695BD50E746DC7F30F45D00FDCBD  CappAckiMiner-PRO_B.exe
 ```
 
 PowerShell:

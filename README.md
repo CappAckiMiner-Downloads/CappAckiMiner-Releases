@@ -8,8 +8,8 @@ Official binary downloads for **CappAckiMiner PRO on Windows and Android**.
 
 | Platform | Edition | Version | Download |
 | --- | --- | --- | --- |
-| Windows | PRO | `1.3.20-test.4.3pro.11` | [Download CappAckiMiner-PRO.exe](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO.exe) |
-| Windows | PRO B | `1.3.20-test.22` | [Download CappAckiMiner-PRO_B.exe](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO_B.exe) |
+| Windows | PRO | `1.3.20-test.4.3pro.12` | [Download CappAckiMiner-PRO.exe](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO.exe) |
+| Windows | PRO B | `1.3.20-test.23` | [Download CappAckiMiner-PRO_B.exe](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO_B.exe) |
 | Windows utility | Legacy backup converter setup | `1.0.0` | [Download converter setup](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-Legacy-Backup-Converter-Setup.exe) |
 | Windows utility | Legacy backup converter portable | `1.0.0` | [Download portable converter](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-Legacy-Backup-Converter.exe) |
 | Android | Universal 1.3.5 | ARM64 and ARMv7 | [Download Universal APK](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-1.3.5-Universal.apk) |
@@ -19,7 +19,7 @@ Official binary downloads for **CappAckiMiner PRO on Windows and Android**.
 
 ## Windows editions
 
-**PRO** is the TEST4.3 PRO-derived Single Engine line, now frozen at **PRO.11**. Further development and testing will continue on **PRO B**, currently **TEST.22**. Both published builds include the verified-epoch handoff and late-result isolation work.
+**PRO** is the TEST4.3 PRO-derived Single Engine line. **PRO.12** is an explicitly requested visual-only update to the frozen PRO.11 mining line; its mining behavior is unchanged. Continued development and mining tests remain on **PRO B**, currently **TEST.23**. Both editions retain their existing verified-epoch handoff and late-result isolation features.
 
 The two editions now use separate application identities, executable names, installation directories and local data areas, so they can be installed and opened independently. A compatible legacy profile may be copied once on first run and then each edition keeps its own data.
 
@@ -41,24 +41,27 @@ The converter reads the legacy EXE strictly as data, validates its embedded encr
 
 ## What changed in this Windows update
 
-- Published PRO.11 and PRO B TEST.22 under the existing download filenames.
-- Main Mode distributes the monitor and income panels across the available toolbar space.
-- Main wallet cards give reward amounts more room and use smaller timestamps for the three recent rewards.
-- Blue and green accept indicators now apply a more visible 12% background tint to their wallet cards.
-- The updates also include clearer manual-stop status, daily-epoch monitor consistency and reduced decorative animation in dense wallet views.
-- PRO and PRO B can be installed and launched independently.
-- A confirmed new mining epoch can retire obsolete local ownership left by an older completed session, preventing it from unnecessarily blocking the next start.
-- A real late SDK result remains attributable to the older session without taking control of the newer session.
-- Current-session and late-session accept indicators are kept separate and reset at the verified epoch boundary.
-- Existing wallet backup, daily/epoch counters, network-health display, Main/Lite views and fixed production timing remain available.
+- Published PRO.12 and PRO B TEST.23 under the existing download filenames.
+- Main Mode now shares Lite's top two rows, including the monitor, income panels and action buttons.
+- Add Wallet stays visible beside the mining controls at desktop widths from 1280 to 1920 pixels.
+- Main wallet cards use more readable 8–9 px timestamps for their three recent rewards while preserving full reward amounts, including in narrow cards.
+- This update changes presentation only; mining, counters, reward accounting and timing behavior are unchanged.
 
-This release improves lifecycle stability. It does not guarantee an acceptance rate, reward amount or uninterrupted network availability.
+### Existing features retained
+
+- Blue and green accept indicators include a 12% wallet-card background tint and reset at the verified epoch boundary.
+- Manual-stop status, daily-epoch monitor consistency and reduced decorative animation in dense wallet views remain available.
+- PRO and PRO B can be installed and launched independently.
+- Existing verified-epoch handoff and late-result isolation keep older-session results separate from a newer session.
+- Wallet backup, daily/epoch counters, network-health display, Main/Lite views and fixed production timing remain available.
+
+This visual update makes no claim of improved acceptance or rewards. Acceptance rate, reward amount and uninterrupted network availability cannot be guaranteed.
 
 ## Windows verification
 
 ```text
-DE47B23A2AE2C4E3BA1748103BB57AF54A4948C239345D5CC85752EEDA8AB663  CappAckiMiner-PRO.exe
-0B600EA70829B9BC31DF8F16F749FC754260E821971E437412EE282167A8E1B2  CappAckiMiner-PRO_B.exe
+AB0194A1D5F939E7D44D814FBAE78F4DDF0B26386A553259F3BB204630184DBA  CappAckiMiner-PRO.exe
+D819B423C0E5D28A33D141F7AA32F97C5EC4695BD50E746DC7F30F45D00FDCBD  CappAckiMiner-PRO_B.exe
 5217A1BBD53A47D74904FF5EE2C6D888522DCC5145979B88446C75BF342B3FC9  CappAckiMiner-Legacy-Backup-Converter-Setup.exe
 656C8B07796288CA53FE270C55D146C1D06AED1444C68CD86CB8804E5ECD40BF  CappAckiMiner-Legacy-Backup-Converter.exe
 ```
