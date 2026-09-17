@@ -28,7 +28,7 @@ This update improves lifecycle stability; it does not guarantee an acceptance ra
 - The installers do not currently carry an Authenticode signature, so Windows SmartScreen may show a warning.
 - Download only from this official release and verify SHA-256 before running.
 - Application source code, wallet files and private mining implementation details are not included in this public repository.
-- Full Turkish installation, usage, status and troubleshooting guidance is available in [HELP.md](https://github.com/cappackiminer/CappAckiMiner-PRO/blob/main/HELP.md).
+- Full English installation, usage, status and troubleshooting guidance is available in [HELP.md](https://github.com/cappackiminer/CappAckiMiner-PRO/blob/main/HELP.md).
 
 ## SHA-256
 

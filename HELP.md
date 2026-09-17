@@ -1,267 +1,267 @@
-# CappAckiMiner PRO — Kullanım ve Yardım
+# CappAckiMiner PRO — User Guide and Help
 
-Bu kılavuz Windows PRO ve PRO B sürümlerinin güvenli kurulumu, temel kullanımı, ekrandaki durumlar ve sık karşılaşılan sorunlar içindir. Uygulamanın özel mining algoritması, iç zamanlayıcıları, retry politikası, SDK çağrı sırası ve teslim stratejisi bu açık dokümana dahil değildir.
+This guide covers safe installation, basic operation, on-screen statuses and troubleshooting for the Windows PRO and PRO B editions. Proprietary mining algorithms, internal scheduling, retry policy details, SDK call ordering and submission strategy are intentionally not included in this public documentation.
 
-## İçindekiler
+## Contents
 
-- [Sürüm seçimi](#sürüm-seçimi)
-- [Kurulumdan önce](#kurulumdan-önce)
-- [Windows kurulumu](#windows-kurulumu)
-- [İlk açılış ve cüzdanlar](#ilk-açılış-ve-cüzdanlar)
-- [Mining başlatma ve durdurma](#mining-başlatma-ve-durdurma)
-- [Ekrandaki sayaçlar](#ekrandaki-sayaçlar)
-- [Kart durumları](#kart-durumları)
-- [Accept çerçeveleri](#accept-çerçeveleri)
-- [Ayarlar](#ayarlar)
-- [Cüzdan yedeği](#cüzdan-yedeği)
-- [Güncelleme ve iki sürümü birlikte kullanma](#güncelleme-ve-iki-sürümü-birlikte-kullanma)
-- [Sorun giderme](#sorun-giderme)
-- [Log paylaşırken güvenlik](#log-paylaşırken-güvenlik)
-- [Dosya doğrulama](#dosya-doğrulama)
+- [Choosing an edition](#choosing-an-edition)
+- [Before installation](#before-installation)
+- [Installing on Windows](#installing-on-windows)
+- [First launch and wallets](#first-launch-and-wallets)
+- [Starting and stopping mining](#starting-and-stopping-mining)
+- [Dashboard counters](#dashboard-counters)
+- [Wallet-card statuses](#wallet-card-statuses)
+- [Accept indicators](#accept-indicators)
+- [Settings](#settings)
+- [Wallet backups](#wallet-backups)
+- [Updating and using both editions](#updating-and-using-both-editions)
+- [Troubleshooting](#troubleshooting)
+- [Sharing logs safely](#sharing-logs-safely)
+- [Verifying downloads](#verifying-downloads)
 
-## Sürüm seçimi
+## Choosing an edition
 
-| Sürüm | Amaç | İç sürüm |
+| Edition | Purpose | Internal version |
 | --- | --- | --- |
-| **PRO** | TEST4.3 PRO tabanlı, daha muhafazakâr karşılaştırma hattı | `1.3.20-test.4.3pro.9` |
-| **PRO B** | Yeni yaşam döngüsü düzeltmelerinin bulunduğu alternatif karşılaştırma hattı | `1.3.20-test.20` |
+| **PRO** | Conservative comparison line derived from TEST4.3 PRO | `1.3.20-test.4.3pro.9` |
+| **PRO B** | Alternative comparison line with the newer lifecycle fixes | `1.3.20-test.20` |
 
-İki sürüm Single Engine mimarisidir. Ayrı uygulama kimliği, kurulum klasörü, EXE adı ve yerel veri alanı kullanırlar; bu nedenle aynı bilgisayarda yan yana kurulup ayrı ayrı açılabilirler.
+Both editions use the Single Engine architecture. They have separate application identities, installation directories, executable names and local data areas, so they can be installed and opened independently on the same computer.
 
-> **Önemli:** Aynı cüzdanı PRO ve PRO B üzerinde aynı anda mining'e başlatmayın. Bu, sağlıklı bir A/B karşılaştırması değildir ve aynı cüzdan için çakışan oturumlar oluşturabilir.
+> **Important:** Do not mine the same wallet in PRO and PRO B at the same time. That is not a valid A/B comparison and may create conflicting sessions for the wallet.
 
-## Kurulumdan önce
+## Before installation
 
-1. Mevcut cüzdanlarınızın güncel bir yedeğini oluşturun.
-2. Yedek dosyasının açılabildiğini ve güvenli bir konumda bulunduğunu kontrol edin.
-3. İndirdiğiniz setup dosyasının SHA-256 değerini bu deponun README dosyasındaki değerle karşılaştırın.
-4. Çalışan mining varsa güncelleme için uygun bir zamanda kontrollü biçimde durdurun.
-5. Setup'ı yalnız bu GitHub deposundaki resmi release bağlantısından indirin.
+1. Create a current backup of all wallets.
+2. Confirm that the backup file is accessible and stored in a safe location.
+3. Compare the downloaded installer's SHA-256 value with the value published in this repository.
+4. If mining is active, stop it in a controlled manner at an appropriate time before upgrading.
+5. Download installers only from the official release page in this repository.
 
-Windows kurulumları şu anda Authenticode ile imzalı değildir. Bu yüzden Windows SmartScreen “tanınmayan uygulama” uyarısı gösterebilir. Dosya adını, indirme adresini ve SHA-256 değerini doğrulamadan devam etmeyin.
+The Windows installers are not currently signed with Authenticode. Windows SmartScreen may therefore display an “unrecognized app” warning. Do not continue until you have verified the filename, download address and SHA-256 value.
 
-## Windows kurulumu
+## Installing on Windows
 
-1. İstediğiniz sürümün setup dosyasını indirin.
-2. SHA-256 değerini doğrulayın.
-3. Setup'ı çalıştırın ve ekrandaki kurulum adımlarını tamamlayın.
-4. Uygulamayı Başlat menüsünden veya oluşturulan kısayoldan açın.
-5. İlk açılış tamamlanmadan uygulamayı zorla kapatmayın.
+1. Download the installer for the edition you want.
+2. Verify its SHA-256 value.
+3. Run the installer and complete the displayed steps.
+4. Open the application from the Start menu or the created shortcut.
+5. Allow the first-launch process to finish before closing the application.
 
-PRO ile PRO B artık birbirinin üzerine kurulmaz. İki uygulamanın adı ve veri alanı ayrıdır.
+PRO and PRO B no longer install over each other. Each edition has its own application name and local data area.
 
-## İlk açılış ve cüzdanlar
+## First launch and wallets
 
-Uyumlu eski bir CappAckiMiner profili bulunursa uygulama ilk çalıştırmada bu profili bir kez kendi veri alanına kopyalayabilir. Bundan sonra PRO ve PRO B değişikliklerini ayrı saklar; bir sürümde eklenen veya silinen cüzdanın diğer sürümde otomatik değişmesi beklenmemelidir.
+If a compatible legacy CappAckiMiner profile is found, the application may copy that profile into its own data area once during first launch. After migration, PRO and PRO B keep their data independently. Adding or removing a wallet in one edition is not expected to change the other edition automatically.
 
-İlk kontrolde:
+After first launch:
 
-- Cüzdan sayısının doğru olduğunu kontrol edin.
-- Cüzdan adlarının ve adreslerinin beklediğiniz hesaplarla eşleştiğini doğrulayın.
-- Eksik cüzdan varsa güvenli yedeğinizden içe aktarın.
-- Bir cüzdanı silmeden önce yedeğinin bulunduğundan emin olun.
-- Aynı cüzdanı iki sürümde eşzamanlı çalıştırmayın.
+- Confirm that the wallet count is correct.
+- Verify that wallet names and addresses match the intended accounts.
+- Import missing wallets from a trusted backup.
+- Confirm that a backup exists before deleting any wallet.
+- Never run the same wallet in both editions simultaneously.
 
-## Mining başlatma ve durdurma
+## Starting and stopping mining
 
 ### Start All
 
-Start All, hazır cüzdanları toplu başlatır. Henüz hazır olmayan cüzdanlar gerekli kontroller tamamlandıkça sıraya katılabilir. Menüde seçilen toplu başlangıç gecikmesi, Start All ile yönetilen cüzdanların doğrulanmış yeni epoch başlangıçlarında da uygulanır.
+Start All begins the bulk-start process for wallets that are ready. Wallets that are not ready yet may join the queue when their required checks complete. The selected bulk-start delay also applies at verified new-epoch starts for wallets managed by Start All.
 
-### Kart üzerindeki Start
+### Start on an individual wallet card
 
-Bir cüzdan kartındaki Start düğmesi yalnız o cüzdanı hedefler. Toplu başlangıç için seçilmiş ek gecikmeyi beklemeden başlatma isteği verir; ancak ağ, epoch ve güvenlik kontrolleri yine geçerlidir.
+The Start button on a wallet card targets only that wallet. It does not use the additional bulk-start delay, but network, epoch and safety checks still apply.
 
-### Stop ve Stop All
+### Stop and Stop All
 
-- Karttaki Stop yalnız ilgili cüzdan için durdurma niyeti oluşturur.
-- Stop All, çalışan ve toplu başlamayı bekleyen cüzdanları durdurur/iptal eder.
-- Stop işleminden sonra eski oturuma ait gerçek bir SDK sonucu geç gelebilir. Bu sonuç mining'i yeniden başlatmaz.
+- Stop on a wallet card records a stop request for that wallet.
+- Stop All stops active wallets and cancels pending bulk starts.
+- A genuine SDK result from an older session may arrive after Stop. Such a result does not restart mining.
 
-Bir düğmeye arka arkaya çok kez basmak süreci hızlandırmaz. Ekrandaki durum değişimini bekleyin.
+Pressing a control repeatedly does not make the operation complete faster. Wait for the card status to change.
 
-## Ekrandaki sayaçlar
+## Dashboard counters
 
 ### Total NACKL
 
-Uygulamanın cüzdanlardan okuduğu toplam görünür bakiyeyi gösterir. Ağ yanıtı gecikirse kısa süre eski değer görünebilir.
+Displays the combined visible balance read from the application's wallets. A delayed network response may cause the previous value to remain visible briefly.
 
 ### Daily NACKL
 
-Doğrulanmış ağ günlük epochu içinde gözlenen pozitif bakiye artışlarının toplamıdır. Saat 00:00'a veya son 24 saate bağlı bir sayaç değildir; doğrulanmış yeni günlük epoch ile sıfırlanır.
+Shows the sum of observed positive balance increases within the verified network daily epoch. It is not a rolling 24-hour counter and is not tied to local midnight. It resets when a verified new daily epoch is observed.
 
 ### Epoch NACKL
 
-Geçerli kısa mining epochu boyunca gözlenen ödül artışlarını toplar ve yeni doğrulanmış kısa epoch ile sıfırlanır. Üç nokta menüsü mevcutsa yakın epoch geçmişi burada görülebilir.
+Accumulates observed reward increases during the current short mining epoch and resets on a verified new short epoch. Where available, the three-dot menu shows recent epoch history.
 
-### CPU ve TPS
+### CPU and TPS
 
-CPU, uygulamanın çalışma yükünü; TPS ise ağın gözlenen işlem hızını temsil eden bilgi alanlarıdır. Tek başına yüksek TPS veya düşük CPU accept garantisi değildir.
+CPU represents application workload. TPS is an informational view of observed network transaction activity. High TPS or low CPU usage does not by itself guarantee an accept.
 
 ### Network Health
 
-Ağ sağlığı, harici ağ gözlemlerinden oluşturulan yardımcı bir göstergedir. Kırmızı–sarı–yeşil zemin genel durumu hızlı okumayı sağlar.
+Network Health is an auxiliary indicator built from external network observations. Its red-to-yellow-to-green background provides a quick visual summary.
 
-- **No data / Veri yok:** Henüz geçerli örnek alınmamıştır.
-- **Stale data / Eski veri:** Son örnek güncelliğini kaybetmiştir.
-- Sağlık yüzdesi mining sonucunun garantisi değildir.
+- **No data:** No valid observation has been received yet.
+- **Stale data:** The most recent observation is no longer current.
+- The displayed percentage is not a guarantee of mining success.
 
-## Kart durumları
+## Wallet-card statuses
 
-Durum adları kısa tutulur. Bir kartın birkaç durumdan sırayla geçmesi normaldir.
+Statuses are intentionally short. It is normal for a wallet card to pass through several states during one lifecycle.
 
-| Durum | Genel anlamı |
+| Status | General meaning |
 | --- | --- |
-| `READY` | Cüzdan başlatma isteği için hazırdır. |
-| `QUEUE` | Yerel başlatma veya ağ işlemi sırasındadır. |
-| `MINING` | Aktif mining oturumu yürütülmektedir. |
-| `WAIT` | Mevcut oturumun ağ/SDK aşamasının tamamlanması beklenmektedir. |
-| `RESULT` | Sonuç işleniyor veya doğrulanıyordur. |
-| `CHECK` | Sonuç/epoch durumu yeniden kontrol ediliyordur. |
-| `CLOSE` | Eski oturumun güvenli kapanış aşamasıdır. |
-| `EPOCH` | Yeni doğrulanmış epoch beklenmektedir. |
-| `REC` / `RESTORE` | Uygulama cüzdanın çalışma durumunu güvenli biçimde kurtarmayı deniyordur. |
-| `Insufficient time` / `Yetersiz süre` | Geçerli epochta yeni ve güvenli bir oturum başlatmak için yeterli süre kalmamıştır. |
+| `READY` | The wallet is ready to receive a start request. |
+| `QUEUE` | A local start or network operation is queued. |
+| `MINING` | An active mining session is running. |
+| `WAIT` | The application is waiting for the current SDK or network stage. |
+| `RESULT` | A result is being processed or verified. |
+| `CHECK` | The result or epoch state is being checked again. |
+| `CLOSE` | The previous session is completing a safe close stage. |
+| `EPOCH` | The wallet is waiting for a verified new epoch. |
+| `REC` / `RESTORE` | The application is attempting to recover the wallet's working state safely. |
+| `Insufficient time` | There is not enough time remaining in the current epoch to start a new safe session. |
 
-`BC 70` görünmesi, yerel oturumun tek başına başarıyla sonuçlandığını kanıtlamaz. Sonuç ve kapanış durumu SDK/ağ yanıtlarıyla birlikte değerlendirilir.
+Seeing `BC 70` does not, by itself, prove that a local session completed successfully. The final state must also account for SDK and network results.
 
-### “Yetersiz süre” neden görülür?
+### Why does “Insufficient time” appear?
 
-Yeni bir mining oturumunun güvenli biçimde tamamlanamayacağı kadar az süre kaldığında yeni başlangıç yapılmaz. Bu koruma devam eden bir oturumu zorla kesmez. Tamamlanmış bir oturumun sonuç/kapanış durumu da yalnız süre azaldı diye kaybolmamalıdır.
+A new mining session is not started when too little time remains for it to complete safely in the current epoch. This protection does not forcibly interrupt a session that is already active. A completed session's result or close status should not be replaced merely because the remaining epoch time is low.
 
-## Accept çerçeveleri
+## Accept indicators
 
-Cüzdan kartlarının çerçeve rengi gerçek SDK sonuçlarının hangi oturum bağlamında gözlendiğini anlatır:
+Wallet-card border colors show the session context in which a genuine SDK result was observed:
 
-- **Yeşil:** Geçerli oturum ve doğrulanmış geçerli epoch için accept gözlenmiştir.
-- **Mavi:** Önceki oturuma ait gerçek accept sonucu geç ulaşmıştır.
-- **Mavi/yeşil dönüşümlü:** Aynı kartta hem geç gelen eski oturum accept izi hem geçerli oturum accept izi vardır.
+- **Green:** An accept was observed for the current session in the verified current epoch.
+- **Blue:** A genuine accept from an earlier session arrived late.
+- **Alternating blue and green:** The card has both a late older-session accept indicator and a current-session accept indicator.
 
-Yeni doğrulanmış kısa epochta görsel izler sıfırlanır. Çerçeve yalnız görsel bilgidir; mining'i başlatmaz, durdurmaz ve ödül hesabı yerine geçmez.
+These visual indicators reset on a verified new short epoch. A border is informational only: it does not start or stop mining and does not replace reward accounting.
 
-Karttaki yeşil sayı accept, kırmızı sayı reject sayacıdır. Fareyi sayının üzerinde tuttuğunuzda açıklaması görünür.
+The green number on a wallet card is the accept counter, while the red number is the reject counter. Hover over a number to display its label.
 
-## Ayarlar
+## Settings
 
-### Cüzdan başlatma aralığı
+### Wallet start spacing
 
-Çok sayıda cüzdanın aynı anda yük bindirmemesi için toplu başlatma istekleri arasında boşluk bırakır. Daha düşük değer her zaman daha iyi sonuç anlamına gelmez.
+Adds spacing between bulk wallet-start requests so that many wallets do not create a simultaneous load spike. A lower value does not necessarily produce better results.
 
-### Start All başlangıç gecikmesi
+### Start All delay
 
-Toplu başlatılan cüzdanların doğrulanmış epoch başlangıcından sonra ne kadar bekleyeceğini seçer. Karttan tekil Start bu ek toplu gecikmeyi kullanmaz.
+Controls how long wallets managed by Start All wait after a verified epoch start. Starting a wallet directly from its card skips this additional bulk delay.
 
 ### Root/proof retry
 
-Geçici ağ veya SDK koşullarında ilgili kontrolün ne sıklıkta yeniden denenebileceğini yönetir. Çok sık deneme ağ ve sistem yükünü artırabilir; çok seyrek deneme ise hazır hale gelmeyi geciktirebilir. Kararlı çalışan bir sistemde yalnız sorun gözlendiğinde ve kontrollü karşılaştırmayla değiştirin.
+Controls how retry opportunities are paced during temporary network or SDK conditions. Retrying too aggressively can increase network and system load, while retrying too slowly may delay readiness. On a stable system, change this setting only when a repeatable problem is observed and compare results under controlled conditions.
 
-Bu ayar mining tap zamanlamasından ayrıdır. Üretim tap zamanlaması kullanıcı menüsünde değiştirilmez.
+This setting is separate from mining tap timing. Production tap timing is not adjustable from the user menu.
 
-### Main ve Lite görünümü
+### Main and Lite views
 
-Main görünümü geniş kartlar ve daha ayrıntılı düzen, Lite görünümü daha fazla cüzdanı aynı ekranda izlemek için yoğun düzen sunar. Görünüm değişikliği mining motorunu değiştirmez.
+Main provides larger cards and a more detailed layout. Lite uses a denser layout so that more wallets can be monitored on one screen. Changing the view does not change the mining engine.
 
-### Dil ve animasyonlar
+### Language and animations
 
-Dil seçimi arayüz metinlerini değiştirir. Genel animasyon seçimi yalnız desteklenen görsel efektleri etkiler; mining sonucunu değiştirmez.
+The language option changes interface text. The general animation option affects only supported visual effects and does not change mining results.
 
-## Cüzdan yedeği
+## Wallet backups
 
-Yedek, güncelleme ve test işlemlerinden önceki en önemli güvenlik adımıdır.
+A verified wallet backup is the most important safety measure before updates or testing.
 
-- Yedeği yalnız güvendiğiniz çevrimdışı veya şifreli konumda saklayın.
-- Bulut paylaşım bağlantısını herkese açık hale getirmeyin.
-- Yedek dosyasını GitHub'a, Telegram grubuna veya destek mesajına eklemeyin.
-- İçe aktardıktan sonra cüzdan sayısını ve adlarını kontrol edin.
-- İçe aktarma tamamlanmadan uygulamayı kapatmayın.
-- Eski yedeğinizi silmeden önce yeni yedeği test edin.
+- Store backups only in a trusted offline or encrypted location.
+- Never make a cloud share link publicly accessible.
+- Never attach a wallet backup to a GitHub issue, Telegram group or support message.
+- After importing, verify wallet names and the total wallet count.
+- Do not close the application until the import has completed.
+- Test the new backup before deleting an older known-good backup.
 
-Uygulama içindeki Wallet Backup seçeneği desteklenen yedekleme ve içe aktarma akışını açar. Ayrı bir yedekleme aracı kullanıyorsanız dosyanın bu sürümle uyumlu olduğundan emin olun.
+The Wallet Backup option opens the supported backup and import workflow. If you use a separate backup utility, confirm that its file is compatible with the installed edition.
 
-## Güncelleme ve iki sürümü birlikte kullanma
+## Updating and using both editions
 
-1. Mining'i uygun anda durdurun.
-2. Güncel yedeği alın ve kontrol edin.
-3. Yeni setup'ın hash değerini doğrulayın.
-4. İlgili sürümün setup'ını çalıştırın.
-5. Açılıştan sonra cüzdanları ve ayarları kontrol edin.
-6. Önce az sayıda cüzdanla gözlem yapın; ardından toplu başlatın.
+1. Stop mining at an appropriate time.
+2. Create and verify a current wallet backup.
+3. Verify the new installer's SHA-256 value.
+4. Run the installer for the relevant edition.
+5. After launch, check wallets and settings.
+6. Observe a small number of wallets first, then use bulk start.
 
-PRO ve PRO B aynı anda açık olabilir. Ancak aynı cüzdan yalnız bir sürümde çalıştırılmalıdır. Karşılaştırma yaparken farklı cüzdan grupları kullanın veya aynı cüzdanı sırayla, aynı ağ koşullarında deneyin.
+PRO and PRO B may be open at the same time, but one wallet must run in only one edition. For comparisons, use separate wallet groups or test the same wallet sequentially under comparable network conditions.
 
-Bir sürümü kaldırmak diğer sürümün kurulumunu kaldırmaz. Yine de kaldırma seçeneği yerel uygulama verisini silmeyi teklif ederse yedeğiniz olmadan onay vermeyin.
+Uninstalling one edition does not uninstall the other. If an uninstaller offers to remove local application data, do not approve that option without a verified backup.
 
-## Sorun giderme
+## Troubleshooting
 
-### Start All pasif veya cüzdan başlamıyor
+### Start All is disabled or a wallet does not start
 
-- En az bir cüzdanın hazır olup olmadığını kontrol edin.
-- Epochta “Yetersiz süre” görülüp görülmediğine bakın.
-- Cüzdanın AUTO durumunu ve bekleyen Stop niyetini kontrol edin.
-- Network Health alanında veri yok/eski veri uyarısı olup olmadığına bakın.
-- Önce karttan tekil Start ile bir cüzdanı deneyin.
-- Uygulamayı art arda açıp kapatmak yerine mevcut kontrolün tamamlanmasını bekleyin.
+- Confirm that at least one wallet is ready.
+- Check whether the card reports `Insufficient time`.
+- Check the wallet's AUTO state and whether a Stop request is pending.
+- Check Network Health for a no-data or stale-data warning.
+- Try Start on one individual wallet card first.
+- Allow the current check to finish instead of repeatedly reopening the application.
 
-### Kart WAIT, RESULT, CHECK veya CLOSE durumunda uzun kalıyor
+### A wallet remains in WAIT, RESULT, CHECK or CLOSE
 
-Bu durumlar her zaman donma anlamına gelmez; geç ağ/SDK sonucu veya eski oturumun güvenli kapanışı bekleniyor olabilir.
+These states do not always indicate a freeze. The application may be waiting for a delayed network/SDK result or a safe close of an older session.
 
-- Ağ sağlığını ve internet bağlantısını kontrol edin.
-- Aynı cüzdanın diğer sürümde çalışmadığından emin olun.
-- Önce bir epoch geçişini gözlemleyin.
-- Sorun tekrarlanırsa Log düğmesinden kayıt alın; cüzdan sırlarını paylaşmadan yalnız ilgili zaman aralığını gönderin.
+- Check Network Health and the internet connection.
+- Confirm that the same wallet is not active in the other edition.
+- Observe at least one epoch transition.
+- If the problem repeats, export a log and share only the relevant time range after removing sensitive information.
 
-Yeni sürümlerde doğrulanmış yeni epoch, aktif işi kalmamış eski yerel sahipliğin sonraki başlangıcı gereksiz yere engellemesini önlemek üzere ele alınır. Geç gelen gerçek sonuç eski oturuma yazılabilir ama yeni oturumun kontrolünü alamaz.
+In current builds, a verified new epoch can retire inactive local ownership left by an older session so that it does not unnecessarily block the next start. A genuine late result may still be attributed to the older session, but it cannot take control of a newer session.
 
-### Accept düşük veya reject yüksek
+### Accept is low or reject is high
 
-Accept oranı yalnız uygulama arayüzüne bağlı değildir. Ağ yoğunluğu, endpoint yanıtları, SDK sonucu, cüzdan yetkilendirmesi ve epoch zamanlaması etkili olabilir.
+Acceptance is not controlled by the interface alone. Network load, endpoint responses, SDK results, wallet authorization and epoch conditions may all affect it.
 
-- Aynı cüzdanı iki uygulamada aynı anda çalıştırmayın.
-- Ağ sağlığı kötü veya veri eskiyse sonucu tek epoch üzerinden değerlendirmeyin.
-- Ayarları sürekli değiştirmek yerine birkaç tam epoch boyunca kontrollü gözlem yapın.
-- Çok agresif retry ayarlarının daha iyi accept anlamına gelmediğini unutmayın.
-- Reject ve accept sayılarını ödül bakiyesiyle karıştırmayın.
+- Do not run the same wallet in two applications simultaneously.
+- If Network Health is poor or stale, do not judge performance from a single epoch.
+- Observe several complete epochs under controlled settings instead of constantly changing values.
+- More aggressive retry behavior does not automatically mean more accepts.
+- Do not confuse accept/reject counters with reward balance changes.
 
-### Network Health “No data” veya “Stale data” gösteriyor
+### Network Health shows “No data” or “Stale data”
 
-- İnternet bağlantısını kontrol edin.
-- Güvenlik duvarı veya DNS'in ağ gözlem servisine erişimi engelleyip engellemediğini kontrol edin.
-- Bir süre bekleyin; gösterge cüzdan başına değil, uygulama genelinde güncellenir.
-- Veri yokluğu otomatik olarak ağın sağlıklı veya sağlıksız olduğu anlamına gelmez.
+- Check the internet connection.
+- Check whether a firewall or DNS policy blocks access to the network-observation service.
+- Wait for the next update; the indicator is shared by the application, not queried separately for every wallet.
+- Missing data does not automatically mean that the network is healthy or unhealthy.
 
-### Bakiye veya Daily/Epoch NACKL geç güncelleniyor
+### Balance or Daily/Epoch NACKL updates late
 
-Ağ okumaları gecikebilir veya sırası değişebilir. Sayaçlar yalnız doğrulanmış ve uygun sıradaki gözlemleri hesaba katmak üzere tasarlanmıştır. Uygulamayı sürekli yeniden başlatmak güncellemeyi hızlandırmaz.
+Network reads may arrive late or out of order. Counters are designed to include only verified observations in the appropriate order. Repeatedly restarting the application does not make the network update faster.
 
-### Windows uygulamayı engelliyor
+### Windows blocks the application
 
-- Dosyanın resmi release sayfasından geldiğini doğrulayın.
-- SHA-256 değerini kontrol edin.
-- Dosya hash'i eşleşmiyorsa çalıştırmayın ve yeniden indirin.
-- Kurumsal cihazlarda sistem yöneticinizin politikasına uyun.
+- Confirm that the file came from the official release page.
+- Verify its SHA-256 value.
+- If the hash does not match, do not run the file; download it again.
+- On a managed device, follow your system administrator's policy.
 
-### Uygulamalar ayrı açılmıyor
+### PRO and PRO B do not open independently
 
-Güncel setup'larda PRO ile PRO B'nin uygulama kimliği, EXE adı ve veri alanı ayrıdır. Eski bir build çalışıyorsa onu kapatın, güncel iki setup'ı yeniden kurun ve Başlat menüsündeki tam adları kullanın.
+Current installers give PRO and PRO B separate application identities, executable names and local data locations. Close any older build, reinstall both current packages and use the exact application names shown in the Start menu.
 
-## Log paylaşırken güvenlik
+## Sharing logs safely
 
-Tanı logları sorunu bulmada yararlıdır fakat paylaşmadan önce mutlaka kontrol edilmelidir.
+Diagnostic logs are useful, but always inspect them before sharing.
 
-Paylaşmayın:
+Never share:
 
-- özel anahtar veya recovery phrase,
-- cüzdan yedek dosyası,
-- bağlantı/deep-link içindeki gizli yetkilendirme verisi,
-- kişisel klasör adları ve gereksiz sistem bilgileri,
-- erişim token'ları, çerezler veya API anahtarları.
+- private keys or recovery phrases,
+- wallet-backup files,
+- secret authorization data contained in connection or deep links,
+- unnecessary personal path and system information,
+- access tokens, cookies or API keys.
 
-Mümkünse yalnız sorunun başladığı dakikadan birkaç dakika öncesini ve sonrasını paylaşın. Orijinal logu güvenli yerde tutup paylaşılacak kopyadaki hassas alanları maskeleyin.
+Where possible, share only a few minutes before and after the problem. Keep the original log privately and redact sensitive fields from the copy that will be shared.
 
-## Dosya doğrulama
+## Verifying downloads
 
-Güncel Windows setup hash'leri:
+Current Windows installer hashes:
 
 ```text
 BFBB03A27100243604FA84D075E8453F0B86513275EE8EF4282A6FC9B4A3A4C1  CappAckiMiner-PRO.exe
@@ -275,25 +275,25 @@ Get-FileHash .\CappAckiMiner-PRO.exe -Algorithm SHA256
 Get-FileHash .\CappAckiMiner-PRO_B.exe -Algorithm SHA256
 ```
 
-Çıktıdaki hash ile bu sayfadaki hash birebir aynı olmalıdır. Bir karakter bile farklıysa dosyayı çalıştırmayın.
+The reported hash must match the value on this page exactly. Do not run the file if even one character differs.
 
-## Destek için gerekli bilgiler
+## Information to include in a support request
 
-Sorun bildirirken şu bilgileri eklemek teşhisi hızlandırır:
+The following information helps diagnose a problem without exposing wallet secrets:
 
-- PRO mu PRO B mi kullandığınız,
-- About/Log alanındaki tam iç sürüm,
-- Windows sürümü,
-- sorunun görüldüğü yerel saat ve epoch,
-- etkilenen cüzdan sayısı ve seviye aralığı,
-- ekrandaki durum adı,
-- hassas verileri temizlenmiş ilgili log bölümü,
-- mümkünse kişisel veri içermeyen ekran görüntüsü.
+- whether you use PRO or PRO B,
+- the complete internal version shown in About or Log,
+- your Windows version,
+- the local time and epoch in which the problem occurred,
+- the number and level range of affected wallets,
+- the status displayed on the card,
+- the relevant redacted log section,
+- a screenshot that contains no private information, where possible.
 
-Özel anahtar, recovery phrase veya cüzdan yedeği hiçbir destek talebi için gerekli değildir.
+A private key, recovery phrase or wallet-backup file is never required for support.
 
-## Sınırlamalar
+## Limitations
 
-CappAckiMiner bir ağ istemcisidir. Ağın kullanılabilirliğini, SDK'nın verdiği sonucu, accept oranını veya ödül miktarını garanti edemez. Arayüzdeki sağlık, sayaç ve durum alanları tanı ve izleme içindir; zincir üzerindeki nihai sonucu değiştirmez.
+CappAckiMiner is a network client. It cannot guarantee network availability, SDK outcomes, acceptance rate or reward amount. Health indicators, counters and statuses are diagnostic and monitoring tools; they do not alter the final on-chain result.
 
-Bu açık yardım belgesi kullanıcıya gerekli çalışma bilgisini verir. Uygulamanın özel scheduling, retry, proof/root, teslim ve sonuç eşleştirme uygulama ayrıntıları güvenlik ve ürün bütünlüğü nedeniyle yayımlanmaz.
+This public guide provides the information required for supported use. Proprietary scheduling, retry, proof/root, submission and result-correlation implementation details remain private for security and product-integrity reasons.

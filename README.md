@@ -13,7 +13,7 @@ Official binary downloads for **CappAckiMiner PRO on Windows and Android**.
 | Android | Universal 1.3.5 | ARM64 and ARMv7 | [Download Universal APK](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-1.3.5-Universal.apk) |
 | Android | ARM64 1.3.4 | ARM64 only | [Download ARM64 APK](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-ARM64.apk) |
 
-[Windows release notes](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/windows-pro-ab-2026-09-17) · [Android release notes](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/android-pro-2026-09-17) · [All releases](https://github.com/cappackiminer/CappAckiMiner-PRO/releases) · [Türkçe yardım](HELP.md)
+[Windows release notes](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/windows-pro-ab-2026-09-17) · [Android release notes](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/android-pro-2026-09-17) · [All releases](https://github.com/cappackiminer/CappAckiMiner-PRO/releases) · [Complete help guide](HELP.md)
 
 ## Windows editions
 
@@ -62,6 +62,6 @@ Avoid unnecessary downgrades or uninstalling an existing installation without fi
 - Verify the SHA-256 hash after downloading.
 - Mining acceptance and rewards depend on the network, wallet authorization, SDK responses and current network conditions; they cannot be guaranteed.
 
-For installation, first-run, status explanations, backup guidance and troubleshooting, see the [complete Turkish help guide](HELP.md).
+For installation, first-run, status explanations, backup guidance and troubleshooting, see the [complete help guide](HELP.md).
 
 GitHub's automatic “Source code” ZIP/TAR files contain only this distribution repository's documentation, not the application's source code.
