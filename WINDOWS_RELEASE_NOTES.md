@@ -6,8 +6,10 @@
 | --- | --- | --- | --- |
 | PRO | `CappAckiMiner-PRO.exe` | TEST4.3 PRO | `1.3.20-test.4.3pro.9` |
 | PRO B | `CappAckiMiner-PRO_B.exe` | Current B comparison line | `1.3.20-test.20` |
+| Backup converter | `CappAckiMiner-Legacy-Backup-Converter-Setup.exe` | Installed utility | `1.0.0` |
+| Backup converter | `CappAckiMiner-Legacy-Backup-Converter.exe` | Portable utility | `1.0.0` |
 
-Both files are Windows installer packages. Stable public filenames are retained so existing download links continue to work.
+The PRO and PRO B files are Windows installer packages. The converter is available as both an installer and a portable executable. Stable public filenames are retained so existing download links continue to work.
 
 ## Changes in this update
 
@@ -22,6 +24,12 @@ Both files are Windows installer packages. Stable public filenames are retained 
 
 This update improves lifecycle stability; it does not guarantee an acceptance rate, reward amount or uninterrupted network availability.
 
+## Legacy backup converter
+
+The release also includes a small Windows utility for owners of older self-contained wallet-backup EXE files. It converts the encrypted backup payload into the `.cappacki` format accepted by PRO and PRO B.
+
+The legacy EXE is never executed. The utility opens it only as a data file, validates the CappAckiMiner backup marker, payload length and encrypted envelope, then writes and verifies a new `.cappacki` file. It does not ask for the backup password or decrypt wallet data. Import the result through **Wallet Backup > Import Wallet Backup** and enter the original backup password in CappAckiMiner.
+
 ## Installation and security
 
 - Back up wallets before installing or upgrading.
@@ -35,6 +43,8 @@ This update improves lifecycle stability; it does not guarantee an acceptance ra
 ```text
 BFBB03A27100243604FA84D075E8453F0B86513275EE8EF4282A6FC9B4A3A4C1  CappAckiMiner-PRO.exe
 6824257881D08B8E8ACFC49139C5E3CCCCB9A185DC05F4620524C5AF104D058C  CappAckiMiner-PRO_B.exe
+5217A1BBD53A47D74904FF5EE2C6D888522DCC5145979B88446C75BF342B3FC9  CappAckiMiner-Legacy-Backup-Converter-Setup.exe
+656C8B07796288CA53FE270C55D146C1D06AED1444C68CD86CB8804E5ECD40BF  CappAckiMiner-Legacy-Backup-Converter.exe
 ```
 
 [Android PRO downloads](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/android-pro-2026-09-17)

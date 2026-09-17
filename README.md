@@ -10,6 +10,8 @@ Official binary downloads for **CappAckiMiner PRO on Windows and Android**.
 | --- | --- | --- | --- |
 | Windows | PRO | `1.3.20-test.4.3pro.9` | [Download CappAckiMiner-PRO.exe](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO.exe) |
 | Windows | PRO B | `1.3.20-test.20` | [Download CappAckiMiner-PRO_B.exe](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO_B.exe) |
+| Windows utility | Legacy backup converter setup | `1.0.0` | [Download converter setup](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-Legacy-Backup-Converter-Setup.exe) |
+| Windows utility | Legacy backup converter portable | `1.0.0` | [Download portable converter](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-Legacy-Backup-Converter.exe) |
 | Android | Universal 1.3.5 | ARM64 and ARMv7 | [Download Universal APK](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-1.3.5-Universal.apk) |
 | Android | ARM64 1.3.4 | ARM64 only | [Download ARM64 APK](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-ARM64.apk) |
 
@@ -23,7 +25,19 @@ The two editions now use separate application identities, executable names, inst
 
 Do **not** start mining the same wallet in both editions at the same time. Side-by-side installation is intended for controlled comparison, not duplicate operation of one wallet.
 
-Both Windows downloads are installer packages published under stable filenames so existing links continue to work. They do not currently carry an Authenticode digital signature; Windows may therefore show a SmartScreen warning.
+The PRO and PRO B Windows downloads are installer packages published under stable filenames so existing links continue to work. The applications and converter do not currently carry an Authenticode digital signature; Windows may therefore show a SmartScreen warning.
+
+## Converting legacy wallet-backup EXE files
+
+Older CappAckiMiner wallet backups were distributed as self-contained `.exe` files. Current PRO and PRO B releases import encrypted `.cappacki` backup files. Use the **Legacy Backup Converter** above to convert an old backup without launching it.
+
+1. Install and open the converter, or download the portable converter.
+2. Select the old wallet-backup `.exe` file.
+3. Save the converted file with the `.cappacki` extension.
+4. In PRO or PRO B, open **Wallet Backup > Import Wallet Backup** and select that file.
+5. Enter the original backup password when requested.
+
+The converter reads the legacy EXE strictly as data, validates its embedded encrypted backup envelope and copies that encrypted payload into the current format. It does not execute the old EXE, request the wallet password, decrypt private material or modify the original file. Keep both the old and converted backups private.
 
 ## What changed in this Windows update
 
@@ -40,6 +54,8 @@ This release improves lifecycle stability. It does not guarantee an acceptance r
 ```text
 BFBB03A27100243604FA84D075E8453F0B86513275EE8EF4282A6FC9B4A3A4C1  CappAckiMiner-PRO.exe
 6824257881D08B8E8ACFC49139C5E3CCCCB9A185DC05F4620524C5AF104D058C  CappAckiMiner-PRO_B.exe
+5217A1BBD53A47D74904FF5EE2C6D888522DCC5145979B88446C75BF342B3FC9  CappAckiMiner-Legacy-Backup-Converter-Setup.exe
+656C8B07796288CA53FE270C55D146C1D06AED1444C68CD86CB8804E5ECD40BF  CappAckiMiner-Legacy-Backup-Converter.exe
 ```
 
 PowerShell example:
@@ -47,6 +63,8 @@ PowerShell example:
 ```powershell
 Get-FileHash .\CappAckiMiner-PRO.exe -Algorithm SHA256
 Get-FileHash .\CappAckiMiner-PRO_B.exe -Algorithm SHA256
+Get-FileHash .\CappAckiMiner-Legacy-Backup-Converter-Setup.exe -Algorithm SHA256
+Get-FileHash .\CappAckiMiner-Legacy-Backup-Converter.exe -Algorithm SHA256
 ```
 
 ## Android packages

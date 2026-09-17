@@ -178,6 +178,17 @@ A verified wallet backup is the most important safety measure before updates or 
 
 The Wallet Backup option opens the supported backup and import workflow. If you use a separate backup utility, confirm that its file is compatible with the installed edition.
 
+### Converting an older wallet-backup EXE
+
+Older CappAckiMiner backups may be self-contained `.exe` files, while current PRO editions use the `.cappacki` format. Download the **CappAckiMiner Legacy Backup Converter** from the Windows release page:
+
+- Use the setup package for Desktop and Start Menu shortcuts.
+- Use the portable package if you prefer a single executable with no installation.
+
+Open the converter, select the old backup EXE and choose a destination for the new `.cappacki` file. Then open **Wallet Backup > Import Wallet Backup** in PRO or PRO B and enter the original backup password.
+
+The converter never starts the old EXE. It reads and validates only the embedded encrypted backup payload, does not decrypt wallet material and leaves the original file unchanged. Do not upload either backup file to GitHub, Telegram, chat or a public cloud link.
+
 ## Updating and using both editions
 
 1. Stop mining at an appropriate time.
