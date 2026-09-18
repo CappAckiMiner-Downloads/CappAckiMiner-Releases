@@ -1,6 +1,6 @@
 # CappAckiMiner PRO — User Guide and Help
 
-This guide covers safe installation, basic operation, on-screen statuses and troubleshooting for the Windows PRO and PRO B editions. Proprietary mining algorithms, internal scheduling, retry policy details, SDK call ordering and submission strategy are intentionally not included in this public documentation.
+This guide covers safe installation, basic operation, visible settings, on-screen statuses and troubleshooting for the Windows PRO and PRO B editions. Proprietary mining algorithms, internal scheduling, SDK call ordering and submission implementation are intentionally not included in this public documentation.
 
 ## Contents
 
@@ -23,10 +23,10 @@ This guide covers safe installation, basic operation, on-screen statuses and tro
 
 | Edition | Purpose | Internal version |
 | --- | --- | --- |
-| **PRO** | TEST4.3 PRO-derived edition; PRO.12 visual update, frozen mining line | `1.3.20-test.4.3pro.12` |
-| **PRO B** | Single Engine edition for continued development and testing | `1.3.20-test.23` |
+| **PRO** | TEST4.3 PRO-derived edition; limited retry-settings update | `1.3.20-test.4.3pro.13` |
+| **PRO B** | Single Engine edition for continued development and testing | `1.3.20-test.28` |
 
-PRO.12 contains an explicitly requested interface update to PRO.11, without changing its mining behavior. The PRO mining line remains frozen; continued development and mining tests remain on PRO B. PRO.12 and B TEST.23 share the same visual changes described below, not a new mining strategy.
+PRO.13 applies the explicitly requested retry-setting choices, default and preference migration to PRO.12. Other PRO behavior is unchanged; this limited exception does not resume general PRO development. PRO B TEST.28 also includes B's newer result/status safeguards, submission observations and multilingual toolbar corrections. Both editions share the retry-setting choices described below, not all internal behavior.
 
 Both editions use the Single Engine architecture. They have separate application identities, installation directories, executable names and local data areas, so they can be installed and opened independently on the same computer.
 
@@ -109,6 +109,7 @@ Network Health is an auxiliary indicator built from external network observation
 - **No data:** No valid observation has been received yet.
 - **Stale data:** The most recent observation is no longer current.
 - The displayed percentage is not a guarantee of mining success.
+- It is not a node message-queue length or fullness measurement. PRO B's submission observations in Log describe only this application's observed sessions and responses, not the entire network queue.
 
 ## Wallet-card statuses
 
@@ -140,6 +141,7 @@ Wallet-card border colors show the session context in which a genuine SDK result
 - **Green:** An accept was observed for the current session in the verified current epoch.
 - **Blue:** A genuine accept from an earlier session arrived late.
 - **Alternating blue and green:** The card has both a late older-session accept indicator and a current-session accept indicator.
+- **Red in PRO B:** A genuine SDK reject was observed. When accept and reject results arrive in the same observed epoch, the latest genuine result determines the card's result color. A network error alone is not a reject.
 
 These visual indicators reset on a verified new short epoch. A border is informational only: it does not start or stop mining and does not replace reward accounting.
 
@@ -159,7 +161,11 @@ Controls how long wallets managed by Start All wait after a verified epoch start
 
 Controls how retry opportunities are paced during temporary network or SDK conditions. Retrying too aggressively can increase network and system load, while retrying too slowly may delay readiness. On a stable system, change this setting only when a repeatable problem is observed and compare results under controlled conditions.
 
-This setting is separate from mining tap timing. Production tap timing is not adjustable from the user menu.
+PRO.13 and PRO B TEST.28 offer **4, 5, 10, 20 and 30 seconds**. The default is **20 seconds**. An older saved value below 4 seconds is replaced with the new 20-second default; supported saved values remain selected.
+
+The selected number is a **base interval**, not an exact delay or a guaranteed minimum. The existing randomized wait remains between 50% and 150% of the selected value: a 4-second selection means a 2–6-second wait, and the default 20-second selection means a 10–30-second wait. Network work can add further elapsed time. This update does not add escalating retries when an overflow response occurs.
+
+This setting is separate from mining tap timing. Production taps remain fixed at **1.72 seconds**, with no Tap Interval option in the user menu. Wallet start spacing and Start All delay are separate settings as well.
 
 ### Main and Lite views
 
@@ -169,7 +175,7 @@ Main cards show the three most recent reward amounts beside their arrival times.
 
 ### Language and animations
 
-The language option changes interface text. The general animation option affects only supported visual effects and does not change mining results.
+The language option changes interface text. PRO B's shared Main/Lite toolbar has been checked in English, Turkish, Russian, Arabic, Chinese and Indonesian to keep translated controls from overlapping. The general animation option affects only supported visual effects and does not change mining results.
 
 ## Wallet backups
 
@@ -281,8 +287,8 @@ Where possible, share only a few minutes before and after the problem. Keep the 
 Current Windows installer hashes:
 
 ```text
-AB0194A1D5F939E7D44D814FBAE78F4DDF0B26386A553259F3BB204630184DBA  CappAckiMiner-PRO.exe
-D819B423C0E5D28A33D141F7AA32F97C5EC4695BD50E746DC7F30F45D00FDCBD  CappAckiMiner-PRO_B.exe
+7FDAEA90E8AB62785A1DAFD14892D2889BF1A38A330C18001C0BCA532D8ACFE3  CappAckiMiner-PRO.exe
+1519BEF29CC7865714466B47394A1E5CE2FEB9AEDAB004637CA9D905DD83EE2E  CappAckiMiner-PRO_B.exe
 ```
 
 PowerShell:

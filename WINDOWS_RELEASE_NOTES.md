@@ -4,56 +4,62 @@
 
 | Edition | Public file | Build line | Internal version |
 | --- | --- | --- | --- |
-| PRO | `CappAckiMiner-PRO.exe` | TEST4.3 PRO.12 — visual update, frozen mining line | `1.3.20-test.4.3pro.12` |
-| PRO B | `CappAckiMiner-PRO_B.exe` | TEST.23 — active development | `1.3.20-test.23` |
+| PRO | `CappAckiMiner-PRO.exe` | TEST4.3 PRO.13 — limited retry-settings update | `1.3.20-test.4.3pro.13` |
+| PRO B | `CappAckiMiner-PRO_B.exe` | TEST.28 — active development | `1.3.20-test.28` |
 | Backup converter | `CappAckiMiner-Legacy-Backup-Converter-Setup.exe` | Installed utility | `1.0.0` |
 | Backup converter | `CappAckiMiner-Legacy-Backup-Converter.exe` | Portable utility | `1.0.0` |
 
-The PRO and PRO B files are Windows installer packages. The converter is available as both an installer and a portable executable. Stable public filenames are retained so existing download links continue to work.
+The PRO and PRO B files are Windows installer packages. Stable public filenames are retained so existing download links continue to work. The backup converters and Android downloads are unchanged by this update.
 
-PRO.12 is an explicitly requested visual-only update to the frozen PRO.11 mining line. This release rebuilds both installers with the shared interface improvements below, without changing either edition's mining behavior. Continued development and mining tests remain on PRO B.
+## Retry-setting update in both editions
 
-## Changes in this update
+- ROOT RETRY INTERVAL now offers **4, 5, 10, 20 and 30 seconds**.
+- The default selection is **20 seconds**. An older saved value below 4 seconds is migrated to the new default; supported existing values are retained.
+- The selection remains a base interval. Existing randomized waits are preserved: the 4-second selection gives a 2–6-second range and the 20-second default gives a 10–30-second range. The menu minimum therefore does not mean a four-second minimum actual wait.
+- Mining tap timing remains fixed at **1.72 seconds**. Wallet start spacing and Start All delay remain separate from retry settings.
+- This update does not add escalating retry behavior for overflow responses.
 
-- Main Mode shares Lite's top two rows instead of using a separate toolbar layout.
-- Add Wallet stays visible beside the mining controls at desktop widths from 1280 to 1920 pixels; the compact log control also remains available.
-- The three recent-reward timestamps in Main cards are enlarged to a readable 8–9 px. Full reward amounts retain priority, including in narrow cards.
-- Mining behavior, counters, reward accounting, start controls and timing are unchanged by these presentation changes.
+PRO.13 is a specifically requested retry-configuration exception to the otherwise frozen PRO.12 line. It does not incorporate PRO B's other development changes or resume general development of PRO. Continued development remains on PRO B.
+
+## PRO B updates included
+
+- Includes B's newer session/result status safeguards and genuine SDK reject feedback. Red result frames and background tint reset at the verified short-epoch boundary; the latest genuine result determines the visible result color.
+- Submission observations in Log help explain the application's own observed requests and responses. They are not node-wide queue length or fullness measurements. Network Health is not a queue measurement either.
+- Main and Lite toolbar alignment is corrected across English, Turkish, Russian, Arabic, Chinese and Indonesian. Translated labels remain within their controls rather than overlapping the income and running panels.
+- Main/Lite Start All animation remains available subject to the user's animation preference.
+
+No claim is made that these changes increase acceptance or rewards. Network availability, acceptance rate and reward amounts cannot be guaranteed.
 
 ## Existing features retained
 
-- Blue and green accept indicators use a 12% wallet-card background tint with their existing epoch reset behavior.
-- Manual-stop status, daily-epoch monitor reporting and reduced decorative animation in dense wallet views remain available.
-- PRO and PRO B retain separate application identities, executable names, installation directories and local data areas. They can be installed and launched independently.
-- A compatible legacy profile can be migrated once on first run; the editions then maintain independent local data.
-- Existing verified-epoch handoff prevents inactive older-session ownership from unnecessarily blocking the next epoch start.
-- A real late SDK result stays associated with its older session and cannot take control of a newer mining session.
-- Current-session and late-session accept indicators stay isolated and reset on the verified epoch boundary.
-- Existing wallet backup, Main/Lite views, network health, daily/epoch accounting and fixed production timing remain available.
+- PRO and PRO B keep separate application identities, executable names, installation directories and local data areas. They can be installed and launched independently.
+- Main and Lite share the top two toolbar rows. Add Wallet and compact Log controls remain beside the mining controls.
+- Daily NACKL follows the verified network daily epoch rather than local midnight or a rolling 24-hour period. Epoch NACKL follows the short mining epoch.
+- Genuine late results remain associated with their older session, separate from a newer session.
+- Blue and green accept indicators retain their short-epoch reset behavior and card background tint.
+- Wallet backup, recent reward display, network health, start delay and fixed production tap timing remain available.
 
 > Do not mine the same wallet in PRO and PRO B at the same time. Side-by-side installation is intended for controlled comparison, not duplicate wallet operation.
 
-This is a visual update, not a new mining optimization. It makes no claim of improved acceptance or rewards and does not guarantee an acceptance rate, reward amount or uninterrupted network availability.
-
 ## Legacy backup converter
 
-The release also includes a small Windows utility for owners of older self-contained wallet-backup EXE files. It converts the encrypted backup payload into the `.cappacki` format accepted by PRO and PRO B.
+The release retains the Windows utility for owners of older self-contained wallet-backup EXE files. It converts the encrypted backup payload into the `.cappacki` format accepted by PRO and PRO B.
 
-The legacy EXE is never executed. The utility opens it only as a data file, validates the CappAckiMiner backup marker, payload length and encrypted envelope, then writes and verifies a new `.cappacki` file. It does not ask for the backup password or decrypt wallet data. Import the result through **Wallet Backup > Import Wallet Backup** and enter the original backup password in CappAckiMiner.
+The legacy EXE is never executed. The utility opens it only as a data file, validates the backup envelope, then writes and verifies a new `.cappacki` file. It does not ask for the backup password or decrypt wallet data. Import the result through **Wallet Backup > Import Wallet Backup** and enter the original backup password in CappAckiMiner.
 
 ## Installation and security
 
-- Back up wallets before installing or upgrading.
+- Back up wallets before installing or upgrading, and stop mining at an appropriate time before running an installer.
 - The installers do not currently carry an Authenticode signature, so Windows SmartScreen may show a warning.
 - Download only from this official release and verify SHA-256 before running.
 - Application source code, wallet files and private mining implementation details are not included in this public repository.
-- Full English installation, usage, status and troubleshooting guidance is available in [HELP.md](https://github.com/cappackiminer/CappAckiMiner-PRO/blob/main/HELP.md).
+- Full English installation, usage, settings, status and troubleshooting guidance is available in [HELP.md](https://github.com/cappackiminer/CappAckiMiner-PRO/blob/main/HELP.md).
 
 ## SHA-256
 
 ```text
-AB0194A1D5F939E7D44D814FBAE78F4DDF0B26386A553259F3BB204630184DBA  CappAckiMiner-PRO.exe
-D819B423C0E5D28A33D141F7AA32F97C5EC4695BD50E746DC7F30F45D00FDCBD  CappAckiMiner-PRO_B.exe
+7FDAEA90E8AB62785A1DAFD14892D2889BF1A38A330C18001C0BCA532D8ACFE3  CappAckiMiner-PRO.exe
+1519BEF29CC7865714466B47394A1E5CE2FEB9AEDAB004637CA9D905DD83EE2E  CappAckiMiner-PRO_B.exe
 5217A1BBD53A47D74904FF5EE2C6D888522DCC5145979B88446C75BF342B3FC9  CappAckiMiner-Legacy-Backup-Converter-Setup.exe
 656C8B07796288CA53FE270C55D146C1D06AED1444C68CD86CB8804E5ECD40BF  CappAckiMiner-Legacy-Backup-Converter.exe
 ```
