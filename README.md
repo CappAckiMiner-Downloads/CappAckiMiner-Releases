@@ -13,7 +13,6 @@ Official binary downloads for **CappAckiMiner PRO on Windows and Android**.
 | Windows utility | Legacy backup converter setup | `1.0.0` | [Download converter setup](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-Legacy-Backup-Converter-Setup.exe) |
 | Windows utility | Legacy backup converter portable | `1.0.0` | [Download portable converter](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-Legacy-Backup-Converter.exe) |
 | Android | Universal 1.3.5 | ARM64 and ARMv7 | [Download Universal APK](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-1.3.5-Universal.apk) |
-| Android | ARM64 1.3.4 | ARM64 only | [Download ARM64 APK](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-ARM64.apk) |
 
 [Windows release notes](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/windows-pro-ab-2026-09-17) · [Android release notes](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/android-pro-2026-09-17) · [All releases](https://github.com/cappackiminer/CappAckiMiner-PRO/releases) · [Complete help guide](HELP.md)
 
@@ -77,7 +76,7 @@ Get-FileHash .\CappAckiMiner-Legacy-Backup-Converter.exe -Algorithm SHA256
 
 ## Android packages
 
-The Universal APK is version **1.3.5** and supports ARM64 and ARMv7. The ARM64-only APK is the earlier version **1.3.4**. Both use the same Android application ID. Minimum Android API level: **24**.
+The Universal APK is the only Android download offered. It is version **1.3.5**, supports both ARM64 and ARMv7, and uses application ID `com.cappackiminer.rootretrysingle.android7`. Minimum Android API level: **24**.
 
 Avoid unnecessary downgrades or uninstalling an existing installation without first creating and safely checking a wallet backup.
 
