@@ -4,22 +4,12 @@
 
 | Edition | Public file | Build line | Internal version |
 | --- | --- | --- | --- |
-| PRO | `CappAckiMiner-PRO.exe` | TEST4.3 PRO.13 — limited retry-settings update | `1.3.20-test.4.3pro.13` |
+| PRO | `CappAckiMiner-PRO.exe` | PRO.13 | `1.3.20-test.4.3pro.13` |
 | PRO B | `CappAckiMiner-PRO_B.exe` | TEST.28 — active development | `1.3.20-test.28` |
 | Backup converter | `CappAckiMiner-Legacy-Backup-Converter-Setup.exe` | Installed utility | `1.0.0` |
 | Backup converter | `CappAckiMiner-Legacy-Backup-Converter.exe` | Portable utility | `1.0.0` |
 
 The PRO and PRO B files are Windows installer packages. Stable public filenames are retained so existing download links continue to work. The backup converters and Android downloads are unchanged by this update.
-
-## Retry-setting update in both editions
-
-- ROOT RETRY INTERVAL now offers **4, 5, 10, 20 and 30 seconds**.
-- The default selection is **20 seconds**. An older saved value below 4 seconds is migrated to the new default; supported existing values are retained.
-- The selection remains a base interval. Existing randomized waits are preserved: the 4-second selection gives a 2–6-second range and the 20-second default gives a 10–30-second range. The menu minimum therefore does not mean a four-second minimum actual wait.
-- Mining tap timing remains fixed at **1.72 seconds**. Wallet start spacing and Start All delay remain separate from retry settings.
-- This update does not add escalating retry behavior for overflow responses.
-
-PRO.13 is a specifically requested retry-configuration exception to the otherwise frozen PRO.12 line. It does not incorporate PRO B's other development changes or resume general development of PRO. Continued development remains on PRO B.
 
 ## PRO B updates included
 
@@ -37,7 +27,7 @@ No claim is made that these changes increase acceptance or rewards. Network avai
 - Daily NACKL follows the verified network daily epoch rather than local midnight or a rolling 24-hour period. Epoch NACKL follows the short mining epoch.
 - Genuine late results remain associated with their older session, separate from a newer session.
 - Blue and green accept indicators retain their short-epoch reset behavior and card background tint.
-- Wallet backup, recent reward display, network health, start delay and fixed production tap timing remain available.
+- Wallet backup, recent reward display, network health and start delay remain available.
 
 > Do not mine the same wallet in PRO and PRO B at the same time. Side-by-side installation is intended for controlled comparison, not duplicate wallet operation.
 
@@ -59,11 +49,11 @@ The legacy EXE is never executed. The utility opens it only as a data file, vali
 
 ```text
 7FDAEA90E8AB62785A1DAFD14892D2889BF1A38A330C18001C0BCA532D8ACFE3  CappAckiMiner-PRO.exe
-1519BEF29CC7865714466B47394A1E5CE2FEB9AEDAB004637CA9D905DD83EE2E  CappAckiMiner-PRO_B.exe
+D58242C7DD29002F3941A006780397FA05C9653C410483CB291A848E70E2FA93  CappAckiMiner-PRO_B.exe
 5217A1BBD53A47D74904FF5EE2C6D888522DCC5145979B88446C75BF342B3FC9  CappAckiMiner-Legacy-Backup-Converter-Setup.exe
 656C8B07796288CA53FE270C55D146C1D06AED1444C68CD86CB8804E5ECD40BF  CappAckiMiner-Legacy-Backup-Converter.exe
 ```
 
-[Android PRO downloads](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/android-pro-2026-09-17)
+[Android PRO downloads](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-PRO/releases/tag/android-pro-2026-09-17)
 
 GitHub's automatic Source code ZIP/TAR downloads contain only this distribution repository's documentation, not the application source code.

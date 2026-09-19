@@ -12,13 +12,13 @@ Official binary downloads for **CappAckiMiner PRO on Windows and Android**.
 | Windows | PRO B | `1.3.20-test.28` | [Download CappAckiMiner-PRO_B.exe](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO_B.exe) |
 | Windows utility | Legacy backup converter setup | `1.0.0` | [Download converter setup](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-Legacy-Backup-Converter-Setup.exe) |
 | Windows utility | Legacy backup converter portable | `1.0.0` | [Download portable converter](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-Legacy-Backup-Converter.exe) |
-| Android | Universal 1.3.5 | ARM64 and ARMv7 | [Download Universal APK](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-1.3.5-Universal.apk) |
+| Android | Universal 1.3.7 | ARM64 and ARMv7 | [Download Universal APK](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-1.3.7-Universal.apk) |
 
-[Windows release notes](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/windows-pro-ab-2026-09-17) · [Android release notes](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/android-pro-2026-09-17) · [All releases](https://github.com/cappackiminer/CappAckiMiner-PRO/releases) · [Complete help guide](HELP.md)
+[Windows release notes](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/windows-pro-ab-2026-09-17) · [Android release notes](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-PRO/releases/tag/android-pro-2026-09-17) · [All releases](https://github.com/cappackiminer/CappAckiMiner-PRO/releases) · [Complete help guide](HELP.md)
 
 ## Windows editions
 
-**PRO** is the TEST4.3 PRO-derived Single Engine line. **PRO.13** makes an explicitly requested retry-settings update to PRO.12; unrelated PRO behavior remains unchanged. This limited update does not resume general development of the PRO line. Continued development remains on **PRO B**, currently **TEST.28**. Both editions retain their separate identities and existing wallet data areas.
+**PRO** is the established Windows edition. **PRO B** is the edition receiving continued development. Current versions are **PRO.13** and **TEST.28** respectively. Both editions retain their separate identities and existing wallet data areas.
 
 The two editions now use separate application identities, executable names, installation directories and local data areas, so they can be installed and opened independently. A compatible legacy profile may be copied once on first run and then each edition keeps its own data.
 
@@ -41,10 +41,7 @@ The converter reads the legacy EXE strictly as data, validates its embedded encr
 ## What changed in this Windows update
 
 - Published PRO.13 and PRO B TEST.28 under the existing download filenames.
-- In both editions, ROOT RETRY INTERVAL offers **4, 5, 10, 20 and 30 seconds**, with **20 seconds** as the default. Saved settings below 4 seconds migrate to the new default; supported existing values are retained.
-- The selected value remains a base interval, not a fixed wait: the existing randomized range is preserved. See [Root/proof retry](HELP.md#rootproof-retry) before comparing settings.
-- Mining tap timing remains fixed at **1.72 seconds** and is separate from retry settings.
-- PRO B includes its newer result/status safeguards, clearer submission observations in Log, and six-language Main/Lite toolbar alignment fixes. These B-specific changes are not transferred to PRO by this release.
+- PRO B includes status-display improvements and six-language Main/Lite toolbar alignment fixes.
 
 ### Existing features retained
 
@@ -52,15 +49,15 @@ The converter reads the legacy EXE strictly as data, validates its embedded encr
 - Manual-stop status, daily-epoch monitor consistency and reduced decorative animation in dense wallet views remain available.
 - PRO and PRO B can be installed and launched independently.
 - Existing verified-epoch handoff and late-result isolation keep older-session results separate from a newer session.
-- Wallet backup, daily/epoch counters, network-health display, Main/Lite views and fixed production timing remain available.
+- Wallet backup, daily/epoch counters, network-health display and Main/Lite views remain available.
 
-This update changes retry configuration; it does not claim a measured improvement in acceptance or rewards. Acceptance rate, reward amount and uninterrupted network availability cannot be guaranteed.
+Acceptance rate, reward amount and uninterrupted network availability cannot be guaranteed.
 
 ## Windows verification
 
 ```text
 7FDAEA90E8AB62785A1DAFD14892D2889BF1A38A330C18001C0BCA532D8ACFE3  CappAckiMiner-PRO.exe
-1519BEF29CC7865714466B47394A1E5CE2FEB9AEDAB004637CA9D905DD83EE2E  CappAckiMiner-PRO_B.exe
+D58242C7DD29002F3941A006780397FA05C9653C410483CB291A848E70E2FA93  CappAckiMiner-PRO_B.exe
 5217A1BBD53A47D74904FF5EE2C6D888522DCC5145979B88446C75BF342B3FC9  CappAckiMiner-Legacy-Backup-Converter-Setup.exe
 656C8B07796288CA53FE270C55D146C1D06AED1444C68CD86CB8804E5ECD40BF  CappAckiMiner-Legacy-Backup-Converter.exe
 ```
@@ -76,7 +73,7 @@ Get-FileHash .\CappAckiMiner-Legacy-Backup-Converter.exe -Algorithm SHA256
 
 ## Android packages
 
-The Universal APK is the only Android download offered. It is version **1.3.5**, supports both ARM64 and ARMv7, and uses application ID `com.cappackiminer.rootretrysingle.android7`. Minimum Android API level: **24**.
+The Universal APK is the only Android download offered. It is version **1.3.7**, supports both ARM64 and ARMv7, and uses application ID `com.cappackiminer.rootretrysingle.android7`. Minimum Android API level: **24**.
 
 Avoid unnecessary downgrades or uninstalling an existing installation without first creating and safely checking a wallet backup.
 

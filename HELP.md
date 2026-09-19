@@ -23,10 +23,10 @@ This guide covers safe installation, basic operation, visible settings, on-scree
 
 | Edition | Purpose | Internal version |
 | --- | --- | --- |
-| **PRO** | TEST4.3 PRO-derived edition; limited retry-settings update | `1.3.20-test.4.3pro.13` |
+| **PRO** | Established Windows edition | `1.3.20-test.4.3pro.13` |
 | **PRO B** | Single Engine edition for continued development and testing | `1.3.20-test.28` |
 
-PRO.13 applies the explicitly requested retry-setting choices, default and preference migration to PRO.12. Other PRO behavior is unchanged; this limited exception does not resume general PRO development. PRO B TEST.28 also includes B's newer result/status safeguards, submission observations and multilingual toolbar corrections. Both editions share the retry-setting choices described below, not all internal behavior.
+PRO.13 is the established Windows edition. PRO B TEST.28 includes status-display improvements and multilingual toolbar corrections. The two editions keep their separate identities and existing wallet data areas.
 
 Both editions use the Single Engine architecture. They have separate application identities, installation directories, executable names and local data areas, so they can be installed and opened independently on the same computer.
 
@@ -157,16 +157,6 @@ Adds spacing between bulk wallet-start requests so that many wallets do not crea
 
 Controls how long wallets managed by Start All wait after a verified epoch start. Starting a wallet directly from its card skips this additional bulk delay.
 
-### Root/proof retry
-
-Controls how retry opportunities are paced during temporary network or SDK conditions. Retrying too aggressively can increase network and system load, while retrying too slowly may delay readiness. On a stable system, change this setting only when a repeatable problem is observed and compare results under controlled conditions.
-
-PRO.13 and PRO B TEST.28 offer **4, 5, 10, 20 and 30 seconds**. The default is **20 seconds**. An older saved value below 4 seconds is replaced with the new 20-second default; supported saved values remain selected.
-
-The selected number is a **base interval**, not an exact delay or a guaranteed minimum. The existing randomized wait remains between 50% and 150% of the selected value: a 4-second selection means a 2–6-second wait, and the default 20-second selection means a 10–30-second wait. Network work can add further elapsed time. This update does not add escalating retries when an overflow response occurs.
-
-This setting is separate from mining tap timing. Production taps remain fixed at **1.72 seconds**, with no Tap Interval option in the user menu. Wallet start spacing and Start All delay are separate settings as well.
-
 ### Main and Lite views
 
 Main provides larger cards and a more detailed layout. Lite uses a denser layout so that more wallets can be monitored on one screen. Both views now share Lite's top two rows, including the Add Wallet button and the compact log button. The controls remain visible at desktop widths from 1280 to 1920 pixels. Changing the view does not change the mining engine.
@@ -243,7 +233,6 @@ Acceptance is not controlled by the interface alone. Network load, endpoint resp
 - Do not run the same wallet in two applications simultaneously.
 - If Network Health is poor or stale, do not judge performance from a single epoch.
 - Observe several complete epochs under controlled settings instead of constantly changing values.
-- More aggressive retry behavior does not automatically mean more accepts.
 - Do not confuse accept/reject counters with reward balance changes.
 
 ### Network Health shows “No data” or “Stale data”
@@ -288,7 +277,7 @@ Current Windows installer hashes:
 
 ```text
 7FDAEA90E8AB62785A1DAFD14892D2889BF1A38A330C18001C0BCA532D8ACFE3  CappAckiMiner-PRO.exe
-1519BEF29CC7865714466B47394A1E5CE2FEB9AEDAB004637CA9D905DD83EE2E  CappAckiMiner-PRO_B.exe
+D58242C7DD29002F3941A006780397FA05C9653C410483CB291A848E70E2FA93  CappAckiMiner-PRO_B.exe
 ```
 
 PowerShell:
@@ -319,4 +308,4 @@ A private key, recovery phrase or wallet-backup file is never required for suppo
 
 CappAckiMiner is a network client. It cannot guarantee network availability, SDK outcomes, acceptance rate or reward amount. Health indicators, counters and statuses are diagnostic and monitoring tools; they do not alter the final on-chain result.
 
-This public guide provides the information required for supported use. Proprietary scheduling, retry, proof/root, submission and result-correlation implementation details remain private for security and product-integrity reasons.
+This guide covers supported use without publishing private implementation details.
