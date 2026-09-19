@@ -10,9 +10,10 @@ Official binary downloads for **CappAckiMiner PRO on Windows and Android**.
 | --- | --- | --- | --- |
 | Windows | PRO | `1.3.20-test.4.3pro.13` | [Download CappAckiMiner-PRO.exe](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO.exe) |
 | Windows | PRO B | `1.3.20-test.28` | [Download CappAckiMiner-PRO_B.exe](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-PRO_B.exe) |
+| Windows utility | Wallet Monitor | `1.0.8` | [Download Wallet Monitor setup](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAcki-Wallet-Monitor-v1.0.8-Setup.exe) |
 | Windows utility | Legacy backup converter setup | `1.0.0` | [Download converter setup](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-Legacy-Backup-Converter-Setup.exe) |
 | Windows utility | Legacy backup converter portable | `1.0.0` | [Download portable converter](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/download/windows-pro-ab-2026-09-17/CappAckiMiner-Legacy-Backup-Converter.exe) |
-| Android | Universal 1.3.7 | ARM64 and ARMv7 | [Download Universal APK](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-1.3.7-Universal.apk) |
+| Android | Universal 1.3.9 | ARM64 and ARMv7 | [Download Universal APK](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-PRO/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-1.3.9-Universal.apk) |
 
 [Windows release notes](https://github.com/cappackiminer/CappAckiMiner-PRO/releases/tag/windows-pro-ab-2026-09-17) · [Android release notes](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-PRO/releases/tag/android-pro-2026-09-17) · [All releases](https://github.com/cappackiminer/CappAckiMiner-PRO/releases) · [Complete help guide](HELP.md)
 
@@ -58,6 +59,7 @@ Acceptance rate, reward amount and uninterrupted network availability cannot be 
 ```text
 7FDAEA90E8AB62785A1DAFD14892D2889BF1A38A330C18001C0BCA532D8ACFE3  CappAckiMiner-PRO.exe
 D58242C7DD29002F3941A006780397FA05C9653C410483CB291A848E70E2FA93  CappAckiMiner-PRO_B.exe
+6CDFFC68D6E7E528FF4B313A886931CB24877F8CC1FF8726BD7116E9958A652C  CappAcki-Wallet-Monitor-v1.0.8-Setup.exe
 5217A1BBD53A47D74904FF5EE2C6D888522DCC5145979B88446C75BF342B3FC9  CappAckiMiner-Legacy-Backup-Converter-Setup.exe
 656C8B07796288CA53FE270C55D146C1D06AED1444C68CD86CB8804E5ECD40BF  CappAckiMiner-Legacy-Backup-Converter.exe
 ```
@@ -67,13 +69,14 @@ PowerShell example:
 ```powershell
 Get-FileHash .\CappAckiMiner-PRO.exe -Algorithm SHA256
 Get-FileHash .\CappAckiMiner-PRO_B.exe -Algorithm SHA256
+Get-FileHash .\CappAcki-Wallet-Monitor-v1.0.8-Setup.exe -Algorithm SHA256
 Get-FileHash .\CappAckiMiner-Legacy-Backup-Converter-Setup.exe -Algorithm SHA256
 Get-FileHash .\CappAckiMiner-Legacy-Backup-Converter.exe -Algorithm SHA256
 ```
 
 ## Android packages
 
-The Universal APK is the only Android download offered. It is version **1.3.7**, supports both ARM64 and ARMv7, and uses application ID `com.cappackiminer.rootretrysingle.android7`. Minimum Android API level: **24**.
+The Universal APK is the only Android download offered. It is version **1.3.9**, supports both ARM64 and ARMv7, and uses application ID `com.cappackiminer.rootretrysingle.android7`. Minimum Android API level: **24**.
 
 Avoid unnecessary downgrades or uninstalling an existing installation without first creating and safely checking a wallet backup.
 
