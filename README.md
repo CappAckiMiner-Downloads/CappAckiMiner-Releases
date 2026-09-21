@@ -14,7 +14,6 @@ This distribution repository contains compiled packages and public documentation
 | Windows | CappAckiMiner PRO B | Legacy | [Download PRO B](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-PRO_B.exe) |
 | Android | Universal APK | `1.3.9` | [Download Android Universal](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-pro-1.3.9-Universal.apk) |
 | Windows utility | Legacy Backup Converter setup | `1.0.0` | [Download converter setup](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-Legacy-Backup-Converter-Setup.exe) |
-| Windows utility | Legacy Backup Converter portable | `1.0.0` | [Download portable converter](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-Legacy-Backup-Converter.exe) |
 
 [All downloads on one page](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/tag/windows-current-2026-09-21) · [User guide](HELP.md)
 
