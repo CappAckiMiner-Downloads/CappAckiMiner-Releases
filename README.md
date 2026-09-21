@@ -13,6 +13,8 @@ This distribution repository contains compiled packages and public documentation
 | Windows | CappAckiMiner PRO | Legacy | [Download PRO](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-PRO.exe) |
 | Windows | CappAckiMiner PRO B | Legacy | [Download PRO B](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-PRO_B.exe) |
 | Android | Universal APK | `1.3.9` | [Download Android Universal](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-pro-1.3.9-Universal.apk) |
+| Windows utility | Legacy Backup Converter setup | `1.0.0` | [Download converter setup](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-Legacy-Backup-Converter-Setup.exe) |
+| Windows utility | Legacy Backup Converter portable | `1.0.0` | [Download portable converter](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-Legacy-Backup-Converter.exe) |
 
 [All downloads on one page](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/tag/windows-current-2026-09-21) · [User guide](HELP.md)
 
@@ -29,6 +31,8 @@ Current Windows SHA-256 values:
 E38AECE87605850259D0A8593784E8145A79DF3E575EB979EAF2804B0A098B96  CappAckiMiner-Burst-v1.0.2-WaitFix-SmallWindow-x64-Setup.exe
 7FDAEA90E8AB62785A1DAFD14892D2889BF1A38A330C18001C0BCA532D8ACFE3  CappAckiMiner-PRO.exe
 D58242C7DD29002F3941A006780397FA05C9653C410483CB291A848E70E2FA93  CappAckiMiner-PRO_B.exe
+5217A1BBD53A47D74904FF5EE2C6D888522DCC5145979B88446C75BF342B3FC9  CappAckiMiner-Legacy-Backup-Converter-Setup.exe
+656C8B07796288CA53FE270C55D146C1D06AED1444C68CD86CB8804E5ECD40BF  CappAckiMiner-Legacy-Backup-Converter.exe
 ```
 
 Android Universal SHA-256:
