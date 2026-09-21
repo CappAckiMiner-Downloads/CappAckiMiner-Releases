@@ -1,311 +1,221 @@
-# CappAckiMiner PRO — User Guide and Help
+# CappAckiMiner — User Guide and Help
 
-This guide covers safe installation, basic operation, visible settings, on-screen statuses and troubleshooting for the Windows PRO and PRO B editions. Proprietary mining algorithms, internal scheduling, SDK call ordering and submission implementation are intentionally not included in this public documentation.
+This guide covers the two maintained Windows editions: **CappAckiMiner Hunter** and **CappAckiMiner Burst**. It explains installation, visible controls, status messages, backups and safe troubleshooting without documenting wallet secrets or internal submission implementation.
 
 ## Contents
 
 - [Choosing an edition](#choosing-an-edition)
 - [Before installation](#before-installation)
-- [Installing on Windows](#installing-on-windows)
-- [First launch and wallets](#first-launch-and-wallets)
-- [Starting and stopping mining](#starting-and-stopping-mining)
-- [Dashboard counters](#dashboard-counters)
+- [Installing and updating](#installing-and-updating)
+- [Wallets and backups](#wallets-and-backups)
+- [Starting and stopping](#starting-and-stopping)
+- [Dashboard information](#dashboard-information)
 - [Wallet-card statuses](#wallet-card-statuses)
-- [Accept indicators](#accept-indicators)
-- [Settings](#settings)
-- [Wallet backups](#wallet-backups)
-- [Updating and using both editions](#updating-and-using-both-editions)
+- [Accept and reject indicators](#accept-and-reject-indicators)
+- [Main and Lite views](#main-and-lite-views)
 - [Troubleshooting](#troubleshooting)
 - [Sharing logs safely](#sharing-logs-safely)
 - [Verifying downloads](#verifying-downloads)
 
 ## Choosing an edition
 
-| Edition | Purpose | Internal version |
+| Edition | Current version | General role |
 | --- | --- | --- |
-| **PRO** | Established Windows edition | `1.3.20-test.4.3pro.13` |
-| **PRO B** | Single Engine edition for continued development and testing | `1.3.20-test.28` |
+| **Hunter SmallWindow** | `1.3.20-test.33` | Queued delivery and diagnostic test edition |
+| **Burst SmallWindow** | `1.0.2` | Fixed-policy alternative edition |
 
-PRO.13 is the established Windows edition. PRO B TEST.28 includes status-display improvements and multilingual toolbar corrections. The two editions keep their separate identities and existing wallet data areas.
+Both editions use separate application identities, installation locations and local data areas. They can be installed and opened independently.
 
-Both editions use the Single Engine architecture. They have separate application identities, installation directories, executable names and local data areas, so they can be installed and opened independently on the same computer.
-
-> **Important:** Do not mine the same wallet in PRO and PRO B at the same time. That is not a valid A/B comparison and may create conflicting sessions for the wallet.
+> Never mine the same wallet in both editions at the same time. Side-by-side installation is for controlled comparison with separate wallet groups or sequential tests.
 
 ## Before installation
 
-1. Create a current backup of all wallets.
-2. Confirm that the backup file is accessible and stored in a safe location.
-3. Compare the downloaded installer's SHA-256 value with the value published in this repository.
-4. If mining is active, stop it in a controlled manner at an appropriate time before upgrading.
-5. Download installers only from the official release page in this repository.
+1. Create a current backup of every wallet.
+2. Confirm that the backup is accessible and stored safely.
+3. Download only from this repository's official Releases page.
+4. Compare the file's SHA-256 with the published value.
+5. Stop the edition being upgraded at an appropriate time before running its installer.
 
-The Windows installers are not currently signed with Authenticode. Windows SmartScreen may therefore display an “unrecognized app” warning. Do not continue until you have verified the filename, download address and SHA-256 value.
+The Windows installers do not currently carry an Authenticode signature. Windows SmartScreen may show an “unrecognized app” warning. Continue only after verifying the filename, repository URL and SHA-256 value.
 
-## Installing on Windows
+## Installing and updating
 
-1. Download the installer for the edition you want.
+1. Download the desired current installer.
 2. Verify its SHA-256 value.
 3. Run the installer and complete the displayed steps.
-4. Open the application from the Start menu or the created shortcut.
-5. Allow the first-launch process to finish before closing the application.
+4. Start the application from the Start menu or shortcut.
+5. Allow first-launch checks to finish.
+6. Confirm wallet names, count and settings before starting all wallets.
 
-PRO and PRO B no longer install over each other. Each edition has its own application name and local data area.
+Installing one edition does not uninstall the other. If an uninstaller offers to remove local application data, do not approve that option without a verified backup.
 
-## First launch and wallets
+## Wallets and backups
 
-If a compatible legacy CappAckiMiner profile is found, the application may copy that profile into its own data area once during first launch. After migration, PRO and PRO B keep their data independently. Adding or removing a wallet in one edition is not expected to change the other edition automatically.
+Use the **+ wallet** button in the upper controls to add a wallet. To restore existing data, use **Wallet Backup > Import Wallet Backup** and choose a trusted `.cappacki` file.
 
-After first launch:
+Backup rules:
 
-- Confirm that the wallet count is correct.
-- Verify that wallet names and addresses match the intended accounts.
-- Import missing wallets from a trusted backup.
-- Confirm that a backup exists before deleting any wallet.
-- Never run the same wallet in both editions simultaneously.
+- Store backups in a trusted offline or encrypted location.
+- Never make a backup share link public.
+- Never attach a wallet backup to an issue, chat or support message.
+- Verify wallet names and the total wallet count after an import.
+- Test a new backup before deleting an older known-good copy.
 
-To add a wallet, use the **+ wallet** button beside the red Stop All button in the second top row. Main and Lite now share these two top rows, so the control stays in the same place when switching views. For an existing backup, use **Wallet Backup > Import Wallet Backup**.
+### Legacy backup EXE files
 
-## Starting and stopping mining
+The Windows archive release contains a setup and portable version of the **Legacy Backup Converter**. It converts compatible self-contained backup EXE files to `.cappacki` without executing the old EXE or decrypting wallet material.
+
+1. Open the converter.
+2. Select the old wallet-backup EXE.
+3. Save the converted `.cappacki` file.
+4. Import that file through **Wallet Backup**.
+5. Enter the original backup password when requested by the miner.
+
+## Starting and stopping
 
 ### Start All
 
-Start All begins the bulk-start process for wallets that are ready. Wallets that are not ready yet may join the queue when their required checks complete. The selected bulk-start delay also applies at verified new-epoch starts for wallets managed by Start All.
+Start All begins the bulk-start process for eligible wallets. Wallets still completing required checks may join later. A configured bulk-start delay may apply at a verified new epoch.
 
-### Start on an individual wallet card
+### Individual Start
 
-The Start button on a wallet card targets only that wallet. It does not use the additional bulk-start delay, but network, epoch and safety checks still apply.
+The Start control on a wallet card targets only that wallet. It skips the additional bulk delay, while network, epoch, ownership and safety checks still apply.
 
 ### Stop and Stop All
 
-- Stop on a wallet card records a stop request for that wallet.
+- Stop requests a controlled stop for one wallet.
 - Stop All stops active wallets and cancels pending bulk starts.
-- A genuine SDK result from an older session may arrive after Stop. Such a result does not restart mining.
+- Repeated clicks do not make an SDK worker close faster.
+- A genuine result from an older session may arrive after Stop; it does not restart mining.
 
-Pressing a control repeatedly does not make the operation complete faster. Wait for the card status to change.
-
-## Dashboard counters
+## Dashboard information
 
 ### Total NACKL
 
-Displays the combined visible balance read from the application's wallets. A delayed network response may cause the previous value to remain visible briefly.
+The combined visible balance read for the application's wallets. A delayed network response may leave the previous value visible briefly.
 
 ### Daily NACKL
 
-Shows the sum of observed positive balance increases within the verified network daily epoch. It is not a rolling 24-hour counter and is not tied to local midnight. It resets when a verified new daily epoch is observed.
+The sum of observed positive balance changes in the verified network daily epoch. It is not a rolling 24-hour total and is not tied to local midnight. It resets at a verified daily-epoch change.
 
 ### Epoch NACKL
 
-Accumulates observed reward increases during the current short mining epoch and resets on a verified new short epoch. Where available, the three-dot menu shows recent epoch history.
+Observed reward increases for the current short mining epoch. It resets at a verified short-epoch change. Where available, the three-dot menu shows recent completed-epoch history.
 
-### CPU and TPS
+### Accept Rate
 
-CPU represents application workload. TPS is an informational view of observed network transaction activity. High TPS or low CPU usage does not by itself guarantee an accept.
+Shows the percentage of the 48 displayed wallet slots that received a genuine SDK accept for the verified current epoch. A late accept from an older epoch is credited to its recorded epoch history rather than the current rate.
 
-### Network Health
+### CPU, TPS and Network Health
 
-Network Health is an auxiliary indicator built from external network observations. Its red-to-yellow-to-green background provides a quick visual summary.
+- CPU is the application's current processor use.
+- TPS is an informational view of observed network activity.
+- Network Health is an auxiliary external observation.
 
-- **No data:** No valid observation has been received yet.
-- **Stale data:** The most recent observation is no longer current.
-- The displayed percentage is not a guarantee of mining success.
-- It is not a node message-queue length or fullness measurement. PRO B's submission observations in Log describe only this application's observed sessions and responses, not the entire network queue.
+None of these values guarantees an accept or reward. Network Health is not the node's complete message-queue length.
 
 ## Wallet-card statuses
 
-Statuses are intentionally short. It is normal for a wallet card to pass through several states during one lifecycle.
-
 | Status | General meaning |
 | --- | --- |
-| `READY` | The wallet is ready to receive a start request. |
-| `QUEUE` | A local start or network operation is queued. |
+| `READY` | The wallet can receive a start request. |
+| `QUEUE` | A local start or delivery operation is queued. |
 | `MINING` | An active mining session is running. |
-| `WAIT` | The application is waiting for the current SDK or network stage. |
+| `SDK WAIT` / `WAIT` | The application is waiting for SDK or network readiness. |
 | `RESULT` | A result is being processed or verified. |
-| `CHECK` | The result or epoch state is being checked again. |
-| `CLOSE` | The previous session is completing a safe close stage. |
+| `CHECK` | Result or epoch state is being checked again. |
+| `CLOSE` | An older session is completing a safe close stage. |
 | `EPOCH` | The wallet is waiting for a verified new epoch. |
-| `REC` / `RESTORE` | The application is attempting to recover the wallet's working state safely. |
-| `Insufficient time` | There is not enough time remaining in the current epoch to start a new safe session. |
+| `REC` / `RESTORE` | The application is restoring working state. |
+| `Insufficient time` | Too little time remains to begin a new safe session. |
 
-Seeing `BC 70` does not, by itself, prove that a local session completed successfully. The final state must also account for SDK and network results.
+`WAIT`, `RESULT`, `CHECK` and `CLOSE` do not automatically mean the application is frozen. A genuinely submitted session may need to retain ownership while waiting for delayed proof or result information.
 
-### Why does “Insufficient time” appear?
+The current editions distinguish work that never began a network write from work whose delivery is uncertain. Only the former can be retired safely at a newer verified epoch. A timeout is not proof that a submitted network request was never delivered.
 
-A new mining session is not started when too little time remains for it to complete safely in the current epoch. This protection does not forcibly interrupt a session that is already active. A completed session's result or close status should not be replaced merely because the remaining epoch time is low.
+## Accept and reject indicators
 
-## Accept indicators
+Card colors are created only from genuine SDK result callbacks:
 
-Wallet-card border colors show the session context in which a genuine SDK result was observed:
+- **Green:** accept observed for the current session in the verified current epoch.
+- **Blue:** accept from an older session arrived during the current epoch.
+- **Alternating blue and green:** both an older-session accept and a current-session accept were observed for that wallet.
+- **Red:** genuine SDK reject; a network error alone is not a reject.
 
-- **Green:** An accept was observed for the current session in the verified current epoch.
-- **Blue:** A genuine accept from an earlier session arrived late.
-- **Alternating blue and green:** The card has both a late older-session accept indicator and a current-session accept indicator.
-- **Red in PRO B:** A genuine SDK reject was observed. When accept and reject results arrive in the same observed epoch, the latest genuine result determines the card's result color. A network error alone is not a reject.
+The latest genuine accept or reject determines the visible result when both occur. Result colors reset at the next verified short epoch. They do not start or stop mining or replace reward accounting.
 
-These visual indicators reset on a verified new short epoch. A border is informational only: it does not start or stop mining and does not replace reward accounting.
+## Main and Lite views
 
-The green number on a wallet card is the accept counter, while the red number is the reject counter. Hover over a number to display its label.
+Main provides larger wallet cards and more detail. Lite is denser. Switching views does not change the mining engine.
 
-## Settings
+Both current Windows editions retain their normal desktop opening size and support the SmallWindow minimums for manual resizing. Some dense content may need scrolling at very small dimensions.
 
-### Wallet start spacing
-
-Adds spacing between bulk wallet-start requests so that many wallets do not create a simultaneous load spike. A lower value does not necessarily produce better results.
-
-### Start All delay
-
-Controls how long wallets managed by Start All wait after a verified epoch start. Starting a wallet directly from its card skips this additional bulk delay.
-
-### Main and Lite views
-
-Main provides larger cards and a more detailed layout. Lite uses a denser layout so that more wallets can be monitored on one screen. Both views now share Lite's top two rows, including the Add Wallet button and the compact log button. The controls remain visible at desktop widths from 1280 to 1920 pixels. Changing the view does not change the mining engine.
-
-Main cards show the three most recent reward amounts beside their arrival times. The timestamps use a more readable 8–9 px size, while full reward amounts retain priority even in narrow cards. Lite wallet rows are unchanged by this adjustment.
-
-### Language and animations
-
-The language option changes interface text. PRO B's shared Main/Lite toolbar has been checked in English, Turkish, Russian, Arabic, Chinese and Indonesian to keep translated controls from overlapping. The general animation option affects only supported visual effects and does not change mining results.
-
-## Wallet backups
-
-A verified wallet backup is the most important safety measure before updates or testing.
-
-- Store backups only in a trusted offline or encrypted location.
-- Never make a cloud share link publicly accessible.
-- Never attach a wallet backup to a GitHub issue, Telegram group or support message.
-- After importing, verify wallet names and the total wallet count.
-- Do not close the application until the import has completed.
-- Test the new backup before deleting an older known-good backup.
-
-The Wallet Backup option opens the supported backup and import workflow. If you use a separate backup utility, confirm that its file is compatible with the installed edition.
-
-### Converting an older wallet-backup EXE
-
-Older CappAckiMiner backups may be self-contained `.exe` files, while current PRO editions use the `.cappacki` format. Download the **CappAckiMiner Legacy Backup Converter** from the Windows release page:
-
-- Use the setup package for Desktop and Start Menu shortcuts.
-- Use the portable package if you prefer a single executable with no installation.
-
-Open the converter, select the old backup EXE and choose a destination for the new `.cappacki` file. Then open **Wallet Backup > Import Wallet Backup** in PRO or PRO B and enter the original backup password.
-
-The converter never starts the old EXE. It reads and validates only the embedded encrypted backup payload, does not decrypt wallet material and leaves the original file unchanged. Do not upload either backup file to GitHub, Telegram, chat or a public cloud link.
-
-## Updating and using both editions
-
-1. Stop mining at an appropriate time.
-2. Create and verify a current wallet backup.
-3. Verify the new installer's SHA-256 value.
-4. Run the installer for the relevant edition.
-5. After launch, check wallets and settings.
-6. Observe a small number of wallets first, then use bulk start.
-
-PRO and PRO B may be open at the same time, but one wallet must run in only one edition. For comparisons, use separate wallet groups or test the same wallet sequentially under comparable network conditions.
-
-Uninstalling one edition does not uninstall the other. If an uninstaller offers to remove local application data, do not approve that option without a verified backup.
+The language setting changes interface text. The animation setting affects supported decorative effects only and does not change mining results.
 
 ## Troubleshooting
 
-### Start All is disabled or a wallet does not start
+### A wallet does not start
 
-- Confirm that at least one wallet is ready.
-- Check whether the card reports `Insufficient time`.
-- Check the wallet's AUTO state and whether a Stop request is pending.
-- Check Network Health for a no-data or stale-data warning.
-- Try Start on one individual wallet card first.
-- Allow the current check to finish instead of repeatedly reopening the application.
+- Confirm that the wallet is enabled for automatic operation.
+- Check for `Insufficient time`.
+- Check whether a Stop request or older SDK worker is still active.
+- Check for `SDK WAIT`, network no-data or stale-data warnings.
+- Try one individual wallet Start before repeating Start All.
+- Do not repeatedly restart the application while a check is in progress.
 
-### A wallet remains in WAIT, RESULT, CHECK or CLOSE
+### A wallet stays in WAIT, RESULT, CHECK or CLOSE
 
-These states do not always indicate a freeze. The application may be waiting for a delayed network/SDK result or a safe close of an older session.
+- Confirm the same wallet is not running in the other edition.
+- Observe at least one complete epoch transition.
+- Check the internet connection and Network Health state.
+- Export a log if the same wallet repeats the behavior across epochs.
 
-- Check Network Health and the internet connection.
-- Confirm that the same wallet is not active in the other edition.
-- Observe at least one epoch transition.
-- If the problem repeats, export a log and share only the relevant time range after removing sensitive information.
+The current lifecycle fixes remove waits known to be unnecessary, while preserving genuinely sent or delivery-uncertain work so late valid results are not discarded. This means not every CLOSE or WAIT should disappear immediately.
 
-In current builds, a verified new epoch can retire inactive local ownership left by an older session so that it does not unnecessarily block the next start. A genuine late result may still be attributed to the older session, but it cannot take control of a newer session.
+### Acceptance is low
 
-### Accept is low or reject is high
+Acceptance depends on network load, endpoint responses, wallet authorization, SDK results and epoch timing. A lower retry value does not guarantee better results and may increase queue errors.
 
-Acceptance is not controlled by the interface alone. Network load, endpoint responses, SDK results, wallet authorization and epoch conditions may all affect it.
+Compare complete epochs with the same wallet group and settings. Do not change several settings during the same comparison and do not run one wallet in both editions.
 
-- Do not run the same wallet in two applications simultaneously.
-- If Network Health is poor or stale, do not judge performance from a single epoch.
-- Observe several complete epochs under controlled settings instead of constantly changing values.
-- Do not confuse accept/reject counters with reward balance changes.
+### Network Health shows No data or Stale data
 
-### Network Health shows “No data” or “Stale data”
+- Check internet, DNS and firewall access.
+- Wait for the next observation.
+- Do not treat missing health data as proof that the network is healthy or unhealthy.
 
-- Check the internet connection.
-- Check whether a firewall or DNS policy blocks access to the network-observation service.
-- Wait for the next update; the indicator is shared by the application, not queried separately for every wallet.
-- Missing data does not automatically mean that the network is healthy or unhealthy.
+### Windows blocks the installer
 
-### Balance or Daily/Epoch NACKL updates late
-
-Network reads may arrive late or out of order. Counters are designed to include only verified observations in the appropriate order. Repeatedly restarting the application does not make the network update faster.
-
-### Windows blocks the application
-
-- Confirm that the file came from the official release page.
-- Verify its SHA-256 value.
-- If the hash does not match, do not run the file; download it again.
-- On a managed device, follow your system administrator's policy.
-
-### PRO and PRO B do not open independently
-
-Current installers give PRO and PRO B separate application identities, executable names and local data locations. Close any older build, reinstall both current packages and use the exact application names shown in the Start menu.
+Verify the official release URL and SHA-256. If one character differs, do not run the file; download it again.
 
 ## Sharing logs safely
 
-Diagnostic logs are useful, but always inspect them before sharing.
+Inspect every log before sharing it. Redact:
 
-Never share:
+- recovery phrases and private keys;
+- wallet-backup files and backup paths;
+- authorization tokens, signatures, cookies and API keys;
+- wallet/account identifiers that are not needed;
+- personal Windows paths and unrelated system details.
 
-- private keys or recovery phrases,
-- wallet-backup files,
-- secret authorization data contained in connection or deep links,
-- unnecessary personal path and system information,
-- access tokens, cookies or API keys.
-
-Where possible, share only a few minutes before and after the problem. Keep the original log privately and redact sensitive fields from the copy that will be shared.
+Share only the short time range around the problem. No support request requires a recovery phrase, private key or wallet-backup file.
 
 ## Verifying downloads
 
 Current Windows installer hashes:
 
 ```text
-7FDAEA90E8AB62785A1DAFD14892D2889BF1A38A330C18001C0BCA532D8ACFE3  CappAckiMiner-PRO.exe
-D58242C7DD29002F3941A006780397FA05C9653C410483CB291A848E70E2FA93  CappAckiMiner-PRO_B.exe
+9A8CA4E3D64F08FB7AA420D6020C8F2993E68CEAFF4875FE38F14BC1CDEFFBD1  CappAckiMiner-Hunter-TEST33-WaitFix-SmallWindow-x64-Setup.exe
+E38AECE87605850259D0A8593784E8145A79DF3E575EB979EAF2804B0A098B96  CappAckiMiner-Burst-v1.0.2-WaitFix-SmallWindow-x64-Setup.exe
 ```
 
 PowerShell:
 
 ```powershell
-Get-FileHash .\CappAckiMiner-PRO.exe -Algorithm SHA256
-Get-FileHash .\CappAckiMiner-PRO_B.exe -Algorithm SHA256
+Get-FileHash .\CappAckiMiner-Hunter-TEST33-WaitFix-SmallWindow-x64-Setup.exe -Algorithm SHA256
+Get-FileHash .\CappAckiMiner-Burst-v1.0.2-WaitFix-SmallWindow-x64-Setup.exe -Algorithm SHA256
 ```
-
-The reported hash must match the value on this page exactly. Do not run the file if even one character differs.
-
-## Information to include in a support request
-
-The following information helps diagnose a problem without exposing wallet secrets:
-
-- whether you use PRO or PRO B,
-- the complete internal version shown in About or Log,
-- your Windows version,
-- the local time and epoch in which the problem occurred,
-- the number and level range of affected wallets,
-- the status displayed on the card,
-- the relevant redacted log section,
-- a screenshot that contains no private information, where possible.
-
-A private key, recovery phrase or wallet-backup file is never required for support.
 
 ## Limitations
 
-CappAckiMiner is a network client. It cannot guarantee network availability, SDK outcomes, acceptance rate or reward amount. Health indicators, counters and statuses are diagnostic and monitoring tools; they do not alter the final on-chain result.
-
-This guide covers supported use without publishing private implementation details.
+CappAckiMiner is a network client. It cannot guarantee network availability, message priority, SDK outcomes, acceptance rate or reward amount. Dashboard values and statuses are diagnostic aids; they do not alter the final network result.
