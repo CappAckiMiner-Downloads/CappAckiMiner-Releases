@@ -10,30 +10,15 @@ This distribution repository contains compiled packages and public documentation
 | --- | --- | --- | --- |
 | Windows | CappAckiMiner Hunter SmallWindow | `1.3.20-test.33` | [Download Hunter TEST33](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-Hunter-TEST33-WaitFix-SmallWindow-x64-Setup.exe) |
 | Windows | CappAckiMiner Burst SmallWindow | `1.0.2` | [Download Burst v1.0.2](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-Burst-v1.0.2-WaitFix-SmallWindow-x64-Setup.exe) |
-| Android | Universal APK | `1.3.9` | [Download Android Universal](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/android-pro-2026-09-17/CappAckiMiner-pro-1.3.9-Universal.apk) |
+| Windows | CappAckiMiner PRO | Legacy | [Download PRO](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-PRO.exe) |
+| Windows | CappAckiMiner PRO B | Legacy | [Download PRO B](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-PRO_B.exe) |
+| Android | Universal APK | `1.3.9` | [Download Android Universal](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-pro-1.3.9-Universal.apk) |
 
-[Current Windows release notes](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/tag/windows-current-2026-09-21) · [Android release notes](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/tag/android-pro-2026-09-17) · [All releases](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases) · [User guide](HELP.md)
+[All downloads on one page](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/tag/windows-current-2026-09-21) · [User guide](HELP.md)
 
 Hunter and Burst are the two maintained Windows editions. They keep separate application identities and local data areas, so they can be installed and opened independently. Never mine the same wallet in both editions at the same time.
 
-The SmallWindow editions open at their normal desktop size and can be resized substantially smaller when needed.
-
-## Windows tools and archive
-
-The [Windows tools and legacy archive](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/tag/windows-pro-ab-2026-09-17) contains:
-
-- CappAcki Wallet Monitor;
-- the Legacy Backup Converter setup and portable executable;
-- retired CappAckiMiner Windows builds retained for users who need an older package;
-- the original legacy release assets migrated from the former download repository.
-
-Archived miner builds are provided for recovery and reference. Use the current Hunter or Burst edition for new testing.
-
-## Legacy backup converter
-
-Older CappAckiMiner wallet backups may be self-contained `.exe` files. Current editions import encrypted `.cappacki` backups. The Legacy Backup Converter reads the old EXE strictly as data, validates its embedded encrypted backup envelope and copies that encrypted payload into the current format. It does not execute the old EXE, request the wallet password or decrypt wallet material.
-
-Keep both the original and converted backup private. Never attach either file to a GitHub issue, chat or public cloud link.
+The SmallWindow editions open at their normal desktop size and can be resized substantially smaller when needed. PRO and PRO B are retained as legacy Windows applications; Hunter and Burst are the maintained editions.
 
 ## Verification
 
@@ -42,6 +27,8 @@ Current Windows SHA-256 values:
 ```text
 9A8CA4E3D64F08FB7AA420D6020C8F2993E68CEAFF4875FE38F14BC1CDEFFBD1  CappAckiMiner-Hunter-TEST33-WaitFix-SmallWindow-x64-Setup.exe
 E38AECE87605850259D0A8593784E8145A79DF3E575EB979EAF2804B0A098B96  CappAckiMiner-Burst-v1.0.2-WaitFix-SmallWindow-x64-Setup.exe
+7FDAEA90E8AB62785A1DAFD14892D2889BF1A38A330C18001C0BCA532D8ACFE3  CappAckiMiner-PRO.exe
+D58242C7DD29002F3941A006780397FA05C9653C410483CB291A848E70E2FA93  CappAckiMiner-PRO_B.exe
 ```
 
 Android Universal SHA-256:
