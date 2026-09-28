@@ -1,39 +1,18 @@
-# CappAckiMiner Windows — Hunter TEST33 and Burst v1.0.2
+# CappAckiMiner Windows downloads — ALL 1.0.9 and Eye 1.0.46
 
-## Current packages
+## Current Windows applications
 
-| Edition | File | Version |
-| --- | --- | --- |
-| Hunter SmallWindow | `CappAckiMiner-Hunter-TEST33-WaitFix-SmallWindow-x64-Setup.exe` | `1.3.20-test.33` |
-| Burst SmallWindow | `CappAckiMiner-Burst-v1.0.2-WaitFix-SmallWindow-x64-Setup.exe` | `1.0.2` |
+| Application | Version | File | SHA-256 |
+| --- | --- | --- | --- |
+| CappAckiMiner ALL Personal | `1.0.9` | `CappAckiMiner-ALL-v1.0.9-windows.exe` | `e8e100f9a6a39fc30f866fe21755223c2e20645d6b1680cb6ae77d365cfd0a7c` |
+| CappAckiMiner Eye | `1.0.46` | `CappAckiMiner-Eye-v1.0.46.exe` | `046874e4b0555aabf7f7f57843ffa6080ef5a47b3226499249fc575e4ae6a7b5` |
 
-These are the two maintained Windows editions. They retain separate application identities and local data areas and may be installed side by side. Do not mine the same wallet in both editions simultaneously.
+ALL Personal is the Windows mining application. Eye is a read-only wallet monitor; it does not start mining. Do not run the same wallet in multiple miner applications at the same time.
 
-## Update summary
+Eye 1.0.46 shows read-only wallet data. When a displayed metric changes, the affected value flashes and its card receives a temporary visual highlight. This visual behavior does not alter network requests or mining operations.
 
-- Reduced an unnecessary delay before an eligible new start after an older worker has actually closed.
-- Improved handling of delayed HTTP response bodies and uncertain delivery results.
-- Preserved late genuine results without allowing an older session to take ownership of a newer session.
-- Improved the distinction between an actual SDK wait and a wallet that is ready to start.
-- Retained SmallWindow resizing, wallet backup support, verified-epoch result colors and recent accept-rate history.
+## Verify the downloaded file
 
-These changes improve local lifecycle and diagnostic behavior. They do not change network priority and do not guarantee a higher acceptance rate.
+Before running either executable, compare its SHA-256 with the value above. Create and verify a wallet backup before installing or upgrading. Windows may show a SmartScreen warning; do not run a file whose hash differs.
 
-## SHA-256
-
-```text
-9A8CA4E3D64F08FB7AA420D6020C8F2993E68CEAFF4875FE38F14BC1CDEFFBD1  CappAckiMiner-Hunter-TEST33-WaitFix-SmallWindow-x64-Setup.exe
-E38AECE87605850259D0A8593784E8145A79DF3E575EB979EAF2804B0A098B96  CappAckiMiner-Burst-v1.0.2-WaitFix-SmallWindow-x64-Setup.exe
-```
-
-## Installation
-
-1. Create and verify a current wallet backup.
-2. Download the desired installer from the official release.
-3. Verify its SHA-256 value.
-4. Stop the installed edition at an appropriate time and run the installer.
-5. Confirm wallets and settings after launch before using Start All.
-
-The installers do not currently carry an Authenticode signature. Windows SmartScreen may therefore display a warning. Verify the download URL and hash before running the file.
-
-See [HELP.md](HELP.md) for operation, status, backup and troubleshooting guidance. Older packages and utilities remain available in the Windows archive release.
+The Android APK and Legacy Backup Converter are listed separately on the [all-downloads release page](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/tag/windows-current-2026-09-21).
