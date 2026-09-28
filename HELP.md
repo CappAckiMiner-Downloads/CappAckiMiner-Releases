@@ -1,6 +1,6 @@
 # CappAckiMiner — User Guide and Help
 
-This guide covers the two maintained Windows editions: **CappAckiMiner Hunter** and **CappAckiMiner Burst**. It explains installation, visible controls, status messages, backups and safe troubleshooting without documenting wallet secrets or internal submission implementation.
+This guide documents the earlier Hunter and Burst interfaces. The current Windows applications are CappAckiMiner ALL Personal 1.0.9 (mining app) and CappAckiMiner Eye 1.0.46 (read-only monitor). The controls and limits below may not match ALL, and this is not an operating guide for Eye. For current downloads and hashes, use README.md or the all-downloads release page.
 
 ## Contents
 
@@ -19,7 +19,7 @@ This guide covers the two maintained Windows editions: **CappAckiMiner Hunter** 
 
 ## Choosing an edition
 
-| Edition | Current version | General role |
+| Historical edition documented here | Version | General role |
 | --- | --- | --- |
 | **Hunter SmallWindow** | `1.3.20-test.33` | Queued delivery and diagnostic test edition |
 | **Burst SmallWindow** | `1.0.2` | Fixed-policy alternative edition |
@@ -63,7 +63,7 @@ Backup rules:
 
 ### Legacy backup EXE files
 
-The Windows archive release contains a setup and portable version of the **Legacy Backup Converter**. It converts compatible self-contained backup EXE files to `.cappacki` without executing the old EXE or decrypting wallet material.
+The current release includes the installable **Legacy Backup Converter** package. A portable converter executable is not listed on this release page. It converts compatible self-contained backup EXE files to `.cappacki` without executing the old EXE or decrypting wallet material.
 
 1. Open the converter.
 2. Select the old wallet-backup EXE.
@@ -131,7 +131,7 @@ None of these values guarantees an accept or reward. Network Health is not the n
 
 `WAIT`, `RESULT`, `CHECK` and `CLOSE` do not automatically mean the application is frozen. A genuinely submitted session may need to retain ownership while waiting for delayed proof or result information.
 
-The current editions distinguish work that never began a network write from work whose delivery is uncertain. Only the former can be retired safely at a newer verified epoch. A timeout is not proof that a submitted network request was never delivered.
+The Hunter and Burst editions documented in this legacy guide distinguish work that never began a network write from work whose delivery is uncertain. Only the former can be retired safely at a newer verified epoch. A timeout is not proof that a submitted network request was never delivered.
 
 ## Accept and reject indicators
 
@@ -148,7 +148,7 @@ The latest genuine accept or reject determines the visible result when both occu
 
 Main provides larger wallet cards and more detail. Lite is denser. Switching views does not change the mining engine.
 
-Both current Windows editions retain their normal desktop opening size and support the SmallWindow minimums for manual resizing. Some dense content may need scrolling at very small dimensions.
+The Hunter and Burst editions documented here retain their normal desktop opening size and support the SmallWindow minimums for manual resizing. Some dense content may need scrolling at very small dimensions.
 
 The language setting changes interface text. The animation setting affects supported decorative effects only and does not change mining results.
 
@@ -202,20 +202,13 @@ Share only the short time range around the problem. No support request requires 
 
 ## Verifying downloads
 
-Current Windows installer hashes:
-
-```text
-9A8CA4E3D64F08FB7AA420D6020C8F2993E68CEAFF4875FE38F14BC1CDEFFBD1  CappAckiMiner-Hunter-TEST33-WaitFix-SmallWindow-x64-Setup.exe
-E38AECE87605850259D0A8593784E8145A79DF3E575EB979EAF2804B0A098B96  CappAckiMiner-Burst-v1.0.2-WaitFix-SmallWindow-x64-Setup.exe
-```
+Current Windows executable hashes are listed in README.md and on the all-downloads release page. Compare the full SHA-256 before running either current Windows file:
 
 PowerShell:
+Get-FileHash .\CappAckiMiner-Eye-v1.0.46.exe -Algorithm SHA256
+Get-FileHash .\CappAckiMiner-ALL-v1.0.9-windows.exe -Algorithm SHA256
 
-```powershell
-Get-FileHash .\CappAckiMiner-Hunter-TEST33-WaitFix-SmallWindow-x64-Setup.exe -Algorithm SHA256
-Get-FileHash .\CappAckiMiner-Burst-v1.0.2-WaitFix-SmallWindow-x64-Setup.exe -Algorithm SHA256
-```
-
+If any character differs from the published value, do not run the file; download it again from the official release page.
 ## Limitations
 
 CappAckiMiner is a network client. It cannot guarantee network availability, message priority, SDK outcomes, acceptance rate or reward amount. Dashboard values and statuses are diagnostic aids; they do not alter the final network result.
