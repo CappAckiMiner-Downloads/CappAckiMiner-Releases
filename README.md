@@ -8,7 +8,7 @@ This distribution repository contains compiled packages and public documentation
 
 | Edition | Version | Description | Download |
 | --- | --- | --- | --- |
-| CappAckiMiner ALL Personal | `1.0.9` | Windows mining application | [Download ALL 1.0.9](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-ALL-v1.0.9-windows.exe) |
+| CappAckiMiner ALL | `1.0.9` | Mining app; Start All displays the Donate heart | [Download ALL 1.0.9](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-ALL-v1.0.9-windows.exe) |
 | CappAckiMiner Eye | `1.0.46` | Read-only wallet monitor | [Download Eye 1.0.46](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-Eye-v1.0.46.exe) |
 
 Eye reads wallet data and does not start or control mining. ALL is the mining application. Do not mine the same wallet simultaneously in ALL and another miner edition.
