@@ -8,7 +8,7 @@ This distribution repository contains compiled packages and public documentation
 
 | Edition | Version | Description | Download |
 | --- | --- | --- | --- |
-| CappAckiMiner ALL | `1.0.9` | Mining app; Start All displays the Donate heart | [Download ALL 1.0.9](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-ALL-v1.0.9-windows.exe) |
+| CappAckiMiner ALL 100 | `1.0.11` | Windows mining app; supports up to 100 active wallets. Starting All briefly displays the Donate heart. | [Download ALL 100 v1.0.11](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-ALL-100-v1.0.11-WindowFocusFix-x64-Setup.exe) |
 | CappAckiMiner Eye | `1.0.46` | Read-only wallet monitor | [Download Eye 1.0.46](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-Eye-v1.0.46.exe) |
 
 Eye reads wallet data and does not start or control mining. ALL is the mining application. Do not mine the same wallet simultaneously in ALL and another miner edition.
@@ -23,7 +23,7 @@ Eye reads wallet data and does not start or control mining. ALL is the mining ap
 ## SHA-256
 
 ```text
-e8e100f9a6a39fc30f866fe21755223c2e20645d6b1680cb6ae77d365cfd0a7c  CappAckiMiner-ALL-v1.0.9-windows.exe
+0553b7d86ca383720e379eaaf8cada8b728d7df5f8c4108add1c61bf5b0d282f  CappAckiMiner-ALL-100-v1.0.11-WindowFocusFix-x64-Setup.exe
 046874e4b0555aabf7f7f57843ffa6080ef5a47b3226499249fc575e4ae6a7b5  CappAckiMiner-Eye-v1.0.46.exe
 48a951009e27e064bc72f12b3cf2e3f9c765fd3b1cdf69dbb5df36437b551c7a  CappAckiMiner-pro-1.3.9-Universal_ANDROID.apk
 5217a1bbd53a47d74904ff5ee2c6d888522dcc5145979b88446c75bf342b3fc9  CappAckiMiner-Legacy-Backup-Converter-Setup.exe
