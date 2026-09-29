@@ -9,7 +9,7 @@ This distribution repository contains compiled packages and public documentation
 | Edition | Version | Description | Download |
 | --- | --- | --- | --- |
 | CappAckiMiner ALL 100 | `1.0.13` | Windows mining app; supports up to 100 active wallets. Starting All briefly displays the Donate heart. | [Download ALL 100 v1.0.13](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-ALL-100-v1.0.13-RootFirst-x64-Setup.exe) |
-| CappAckiMiner Eye | `1.0.46` | Read-only wallet monitor | [Download Eye 1.0.46](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-Eye-v1.0.46.exe) |
+| CappAckiMiner Eye | `1.0.47` | Read-only wallet monitor | [Download Eye 1.0.47](https://github.com/CappAckiMiner-Downloads/CappAckiMiner-Releases/releases/download/windows-current-2026-09-21/CappAckiMiner-Eye-v1.0.47-CardFlash10s-4allWhite-x64-Setup.exe) |
 
 Eye reads wallet data and does not start or control mining. ALL is the mining application. Do not mine the same wallet simultaneously in ALL and another miner edition.
 
@@ -24,7 +24,7 @@ Eye reads wallet data and does not start or control mining. ALL is the mining ap
 
 ```text
 69ae11c087249fcd09fbf2996b91ac8f73b9e4cc2b417d859c913e349620daaa  CappAckiMiner-ALL-100-v1.0.13-RootFirst-x64-Setup.exe
-046874e4b0555aabf7f7f57843ffa6080ef5a47b3226499249fc575e4ae6a7b5  CappAckiMiner-Eye-v1.0.46.exe
+61935a863fda5af60add395b111860a1d460caca18ce32a1d3eb98918523cf41  CappAckiMiner-Eye-v1.0.47-CardFlash10s-4allWhite-x64-Setup.exe
 48a951009e27e064bc72f12b3cf2e3f9c765fd3b1cdf69dbb5df36437b551c7a  CappAckiMiner-pro-1.3.9-Universal_ANDROID.apk
 5217a1bbd53a47d74904ff5ee2c6d888522dcc5145979b88446c75bf342b3fc9  CappAckiMiner-Legacy-Backup-Converter-Setup.exe
 ```
